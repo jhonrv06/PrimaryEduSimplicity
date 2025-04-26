@@ -1,0 +1,144 @@
+---
+import Primarylogo from '../assets/LogoPrimary.svg';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/LogoPrimaryEdu.svg"/>
+		<meta name="generator" content={Astro.generator} />
+		<title>PrimaryEduSimplicity</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<img src={Primarylogo.src} alt="LogoPrimary" width="60px" height="auto">
+				<p><span>Primary</span> <span>Edu</span> Simplicity</p>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Sobre nosotros</a></li>
+					<li><a href="">Tus clases</a></li>
+					<li><a href="">Dashboard</a></li>
+				</ul>
+			</nav>
+			<div class="buttons">
+				<button id="ingreso" class="buttonlogin">Ingreso
+				</button>
+				<button id="registro" class="buttonlogin">Registro
+				</button>
+			</div>
+		</header>
+		<slot />
+		<footer>
+			<div class="icons">
+				<img src="/public/icons/youtube.svg" alt="Youtube">
+				<img src="/public/icons/instagram.svg" alt="Instagram">
+			</div>
+			<p>© 2025 PrimariEduSimplicity| All Rights Reserved</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(6, 111, 153);
+	}
+	
+	header{
+		background-color: aliceblue;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	ul{
+		display: flex;
+		list-style: none;
+		gap: 20px;
+		padding: 0;
+	}
+
+	.logo{
+		/*font-family: "Nunito", sans-serif;
+		font-family: "Cardo", serif;
+		*/
+		font-family: "Libre Bodoni", serif;
+		color: rgb(133, 25, 25);
+		font-size: clamp(0.5rem, 0.7vw, 3rem);
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: 30px;
+	}
+
+	header a{
+		text-decoration: none;
+		color: black;
+		font-size: clamp(0.6rem, 0.8vw, 3rem);
+		font-weight: 600;
+		
+		font-family:  "Cardo", serif;
+	}
+
+	.buttons{
+		margin-right: 30px;
+	}
+	
+
+	.buttons button{
+		font-size: clamp(0.8rem, 0.8vw, 0.7rem);
+		padding: clamp(0.5rem, 0.4vw, 1rem) clamp(1rem, 2vw, 2rem);
+		max-width: 90%;
+		min-width: 20px;
+		flex-grow: 1;
+		border: 0;
+		border-radius: 15px;
+		background-color: #98B3DC;
+		color: white;
+		font-weight: 800;
+		font-family:  "Cardo", serif;
+	}
+
+	.buttons :nth-child(2){
+		background-color: #2d5da5;
+	}
+	.buttons :nth-child(1){
+		transform: translate(30px,0);
+	}
+	.logo p{
+		margin: 0;
+	}
+
+	.logo img{
+		width: clamp(40px, 3vw, 5rem);
+		height: auto;
+	}
+
+	footer{
+		width: 100%;
+		background-color: white;
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	footer p{
+		margin: 0.5em;
+		font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+	}
+</style>
