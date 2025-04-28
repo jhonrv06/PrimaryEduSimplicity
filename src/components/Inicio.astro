@@ -1,31 +1,281 @@
 ---
-import Background_header from '../assets/Background_header.jpg';
+import imagenheader from '../assets/LogoPrimary.svg'
+import imagensilder from '../assets/Imagen2.png'
+import MachineL from '../assets/Machine_Learning.svg'
+import ImagenButton1 from '../assets/Imagenbutton1.svg'
+import ImagenButton2 from '../assets/Imagenbutton2.svg'
+import ImagenButton3 from '../assets/Imagenbutton3.svg'
+import ImagenButton4 from '../assets/Imagenbutton4.svg'
+import ImagenButton5 from '../assets/Imagenbutton5.svg'
+import ImagenButton6 from '../assets/Imagenbutton6.svg'
+import AppMobil from '../assets/mobilApp.svg'
+import escucha from '../assets/escucha.svg'
+import escritura from '../assets/escritura.svg'
+import lectura from '../assets/lectura.svg'
+import habla from '../assets/habla.svg'
 ---
 
 <div id="container">
 	<header>
-		<h1>PRIMARY EDU SIMPLICITY</h1>
+		<!-- <img src={Background_header.src} alt=""> -->
+		 <div class="container_conten">
+			<div class="container_logo">
+				<h1><span>PRIMARY</span> <span>EDU</span> <br> <span>SIMPLICITY</span></h1>
+				<img src={imagenheader.src} alt="iamgenPrimary">
+		 	</div>
+			 <div class="slider">
+				<img src={imagensilder.src} alt="imagencomputadora">
+			 </div>
+		 </div>
 	</header>
-
+	<main>
+		<div class="container_main">
+			<header>
+				<img src={MachineL.src} alt="">
+				<div class="container_text">
+					<h2>No pares de aprender</h2>
+					<p>PrimaryEduSimplicity te brinda acceso gratuito al material didáctico necesario para tus clases. Simplemente selecciona tu grado y utiliza nuestros recursos en tus lecciones.</p>
+				</div>
+			</header>
+			<div class="container_buttons">
+				<div class="buttons_imagen">
+					<div class="container_buttons2">
+						<img src={ImagenButton1.src} alt="">
+						<button>Transición</button>
+					</div>
+					<div class="container_buttons2">
+						<img src={ImagenButton2.src} alt="">
+						<button>Primero</button>		
+					</div>
+					<div class="container_buttons2">
+						<img src={ImagenButton3.src} alt="">
+						<button id="segundo">Segundo</button>
+					</div>
+				</div>
+				<div class="buttons_imagen">
+					<div class="container_buttons2">
+						<img src={ImagenButton4.src} alt="">
+						<button id="tercero">Tercero</button>
+					</div>
+					<div class="container_buttons2">
+						<img src={ImagenButton5.src} alt="">
+						<button>Cuarto</button>
+					</div>
+					<div class="container_buttons2">
+						<img src={ImagenButton6.src} alt="">
+						<button>Quinto</button>
+					</div>
+				</div>
+				</div>
+			<div class="container_final">
+				<header>
+					<img src={AppMobil.src} alt="">
+					<div class="container_text">
+						<h2>Habilidades</h2>
+						<p>Con los cursos y materiales que tenemos a tu disposición, podrás preparar tus clases de manera que tus estudiantes desarrollen sus habilidades de forma efectiva</p>
+					</div>
+				</header>
+				<section class="section">
+					<div class="section__container">
+						<div class="container__elements">
+							<img src={escucha.src} alt="">
+							<p>Escucha</p>
+						</div>
+						<div class="container__elements">
+							<img src={habla.src} alt="">
+							<p>Habla</p>
+						</div>
+					</div>
+					<div class="section__container section2">
+						<div class="container__elements">
+							<img src={lectura.src} alt="">
+							<p>Lectura</p>
+						</div>
+						<div class="container__elements">
+							<img src={escritura.src} alt="">
+							<p>Escritura</p>
+						</div>
+					</div>
+				</section>
+				</div>	
+			</div>
+		</div>
+	</main>
 </div>
 
 <style>
-	header{
+	#container > header{
 		width: 100%;
-		background-image: url('${Background_header}');
-		
+		background-color: #F7F7F7;
+		background-color: #E8E7EC;
+	}
+
+	.container_logo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+	
+	.container_conten{
+		position: sticky;
+    	left: 0;
+		margin: 20px clamp(0px, 18vw, 400px);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container_main{
+		position: sticky;
+    	left: 0;
+		margin: 20px clamp(0px, 18vw, 400px);
+		display: flex;
+		flex-direction: column;
+	
+	}
+
+	.container_logo img{
+		width: clamp(5rem, 8vw, 20rem);
+		height: auto;
 	}
 
 	h1{
-		margin: 0;
-		
+		font-size: clamp(2rem, 5vw, 2.5rem);
+		font-weight: 800;
+		text-shadow: 0 0 5px #02020267;
+		text-align: center;
 	}
 
+	.slider{
+		position: relative;
+		height: 400px;
+		background-color: #ffffff;
+		/*background-image: url("/src/assets/Background_header1.jpg");*/
+		background-size: cover;
+    	background-position: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.slider img{
+		position: absolute;
+		width: clamp(5rem, 12vw, 20rem);
+	}
+
+	header h1 span:nth-child(1){
+		color: rgb(141, 141, 141);
+	}
+	header h1 span:nth-child(2){
+		color: #AE2C10;
+	}
+
+	header h1 span:nth-child(4){
+		color: #3C5983;
+	}
 	#container {
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 		height: 100%;
 		width: 100%;
+		flex-direction: column;
+		display: flex;
+	}
 
+	.container_main header{
+		width: 60%;
+		display: flex;
+		gap: 10px;
+		margin-bottom: 50px;
+		
+	}
+
+	.container_main header img{
+		width: clamp(4rem, 4vw, 8rem);
+	}
+
+	.container_buttons {	
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.container_buttons2{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.container_buttons2 img{
+		width: clamp(5rem, 5vw, 8rem);
+		height: clamp(5rem, 5vh, 8rem);
+	}
+
+	.buttons_imagen{
+		display: flex;
+		flex-grow: 1;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		flex-wrap: wrap;
+	
+	}
+	.container_buttons button{
+		font-size: clamp(0.8rem, 6vw, 1.5rem);
+		padding: clamp(0.4rem, 1vw, 2rem) clamp(0.4rem, 6vw, 5rem);
+		width: 250px;	
+		height: 70px;
+		text-align: center;
+		border: 0;
+		border-radius: 10px;
+		background-color: #F15151;
+		color: white;
+		font-weight: 800;
+		font-family: Calibri, 'Trebuchet MS', sans-serif;
+		box-sizing: border-box;
+	}
+
+	.container_final{
+		border-top: 1px solid rgb(224, 224, 224);
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.section{
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		
+	}
+	.section__container{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 50%;
+		flex-wrap: wrap;
+		font-weight: 600;
+	}
+
+	.section2 {
+		justify-content: flex-end;
+	}
+
+	.container__elements{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+	}
+	.container__elements img{
+		width: clamp(5rem, 9vw, 9rem);
+		height: clamp(5rem, 8remvh, 9rem);
+	}
+
+	main{
+		background-color: white;
+		width: 100%;
+		
 	}
 
 </style>
