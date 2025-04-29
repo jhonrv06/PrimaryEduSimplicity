@@ -1,0 +1,64 @@
+---
+import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
+import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
+---
+
+<div class="container">
+    <div class="container__grupo">
+         <aside>
+            <h3>Cursos</h3>
+            <button class="button" id="Transición">Transición</button>
+            <button class="button" id="Primero">Primero</button>
+            <button class="button" id="Segundo">Segundo</button>
+            <button class="button" id="Tercero">Tercero</button>
+            <button class="button" id="Cuarto">Cuarto</button>
+            <button class="button" id="Quinto">Quinto</button>
+         </aside>
+         <main>
+           
+         </main>
+    </div>
+</div>
+
+<style>
+    .container__grupo{
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        position: sticky;
+    	left: 0;
+		margin: 20px clamp(0px, 18vw, 400px);
+		display: flex;
+        margin-top: 80px;
+    }
+    aside{
+        display: flex;
+        flex-direction: column;
+        width: 10%;
+        max-width: 10%;
+        border-right: 1px solid rgb(214, 214, 214);
+    }
+    button{
+        font-size: clamp(0.8rem, 0.8vw, 0.7rem);
+		padding: clamp(0.4rem, 0.4vw, 1rem);
+        background-color: rgba(255, 255, 255, 0);
+		min-width: 20px;    
+        border: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: left;
+        color: rgb(66, 66, 66);
+        box-sizing: content-box;
+        border-left: 2px solid #f1515100;
+    }
+
+    button:hover{
+        border-left: 2px solid #F15151;
+        color: #F15151;
+    }
+
+    main{
+        flex: 1;
+        width: 100%;
+        height: 100vh;
+    }
+
+</style>

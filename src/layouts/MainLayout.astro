@@ -1,6 +1,6 @@
 ---
 import Primarylogo from '../assets/LogoPrimary.svg';
-
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -10,7 +10,7 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/LogoPrimaryEdu.svg"/>
 		<meta name="generator" content={Astro.generator} />
-		<title>PrimaryEduSimplicity</title>
+		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 				<ul>
 					<li><a href="/">Inicio</a></li>
 					<li><a href="/nosotros">Sobre nosotros</a></li>
-					<li><a href="">Tus clases</a></li>
+					<li><a href="/tusClases">Tus clases</a></li>
 					<li><a href="">Dashboard</a></li>
 				</ul>
 			</nav>
@@ -46,6 +46,7 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 			</div>
 			<p>© 2025 PrimariEduSimplicity| All Rights Reserved</p>
 		</footer>
+		<script type="module" src="/src/scripts/doominicio.js"></script>
 	</body>
 </html>
 
@@ -75,7 +76,7 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 	ul{
 		display: flex;
 		list-style: none;
-		gap: 30px;
+		gap: 10px;
 		padding: 0;
 	}
 
@@ -97,9 +98,17 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 		text-decoration: none;
 		color: rgb(53, 53, 53);
 		font-size: clamp(0.8rem, 0.9vw, 3rem);
-		font-weight:400;
+		padding: clamp(0.4rem, 0.4vw, 1rem) clamp(0.4rem, 0.9vw, 2rem);
+		border-radius: 5px;
+		font-weight:700;
 		font-family: Calibri, 'Trebuchet MS', sans-serif;
 		/*font-family: "Adamina", serif;*/
+	}
+
+	header a:hover{
+		color: white;
+		background-color: #98B3DC;
+		font-weight:700;
 	}
 
 	.buttons{
@@ -154,5 +163,7 @@ import Primarylogo from '../assets/LogoPrimary.svg';
 	main{
 		flex: 1;
 	}
+
+	
 </style>
 

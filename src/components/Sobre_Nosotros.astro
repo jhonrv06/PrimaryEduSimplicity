@@ -1,22 +1,111 @@
 ---
-
+import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
+import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 ---
 
 <div class="container">
-<h1>Sobre nosotros</h1>
-<iframe src="" frameborder="0">
-
-</iframe>
-<p>PrimaryEduSimplicity es tu recurso educativo para enseñar inglés en primaria. Nos comprometemos a proporcionar a los docentes herramientas efectivas y recursos de alta calidad que inspiren el aprendizaje de manera divertida y significativa.
-Valoramos la colaboración y la retroalimentación de nuestra comunidad de educadores, trabajando constantemente para mejorar y expandir nuestro catálogo de recursos. Juntos, podemos inspirar a la próxima generación de hablantes de inglés y ayudarles a alcanzar su máximo potencial.
-¡Gracias por ser parte de nuestra comunidad! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos. Atentamente, El Equipo de PrimaryEduSimplicity.</p>
+    <header>
+        <div class="container__grupo">
+            <div class="container__text">
+                <h1>Sobre nosotros</h1>
+                <p>
+                    PrimaryEduSimplicity es tu recurso educativo para enseñar inglés en primaria. Nos comprometemos a proporcionar a los docentes herramientas efectivas y recursos de alta calidad que inspiren el aprendizaje de manera divertida y significativa.
+                </p>
+                <p>
+                    Valoramos la colaboración y la retroalimentación de nuestra comunidad de educadores, trabajando constantemente para mejorar y expandir nuestro catálogo de recursos. Juntos, podemos inspirar a la próxima generación de hablantes de inglés y ayudarles a alcanzar su máximo potencial.
+                    ¡Gracias por ser parte de nuestra comunidad! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos. Atentamente, El Equipo de PrimaryEduSimplicity.
+                </p>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zP0SfM2lHFA?si=5GF76pUj92xDnq1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </header>
+    <section>
+        <div class="container__grupo">
+            <article class="container__article">
+                <img src={ImagenMision.src} alt="">
+                <div class="container__text">
+                    <h2>Nuestra Misión</h2>
+                    <p>En PrimaryEduSimplicity, nos dedicamos a apoyar a los docentes de primaria proporcionando recursos de inglés de alta calidad, prácticos y creativos. Nuestro objetivo es hacer que el aprendizaje del inglés sea una experiencia divertida, significativa y accesible para todos los estudiantes, impulsando su confianza y amor por el idioma.</p>
+                </div>
+            </article>
+            <article class="container__article --vision">
+                <div class="container__text --vision">
+                    <h2>Nuestra vision</h2>
+                    <p>Ser el aliado educativo preferido por los docentes de primaria, creando una comunidad donde compartir, crecer y transformar la enseñanza del inglés. Soñamos con un futuro donde cada niño pueda alcanzar su máximo potencial comunicándose en un mundo cada vez más conectado.</p>
+                </div>
+                <img src={ImagenVision.src} alt="">
+            </article>
+        </div>
+    </section>
 </div>
 
 <style>
-    .contaioner{
+    .container{
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container__grupo{
+        position: sticky;
+    	left: 0;
+		margin: 20px clamp(0px, 18vw, 400px);
+		display: flex;
+        align-items: center;
+        justify-content: space-between;
+       
+    }
+
+    section >.container__grupo{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container__text{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .container__article{
+        flex: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8%;
+        margin-bottom: 50px;
+    }
+
+    .--vision{
+        justify-content: flex-start;
+
+    }
+
+    header{
+        width: 100%;
+        background-color: #E8E7EC;
+    }
+
+    section{
+        width: 100%;
+        height: 100%;
     }
     h1{
         font-size: clamp(2rem, 5vw, 2.5rem);
+        color: #0e0e0e;
+    }
+
+    p{
+        font-size: clamp(1rem, 1vw, 30rem);
+        width: clamp(5rem, 27vw, 35rem);
+        line-height: 1.5;
+    }
+ 
+    img{
+        width: clamp(5rem, 12vw, 20rem);
     }
 </style>
