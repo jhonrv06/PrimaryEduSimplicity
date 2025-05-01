@@ -1,18 +1,24 @@
 ---
-import imagen1 from '../assets/inicioSesion/aprender.svg';
-
+import imagen1 from '../assets/Registrate/cohete.svg';
+import imagen2 from '../assets/Registrate/aprende.svg';
 ---
 <div class="container">
-    <img src={imagen1.src} alt="">
+    <div class="container__imagen">
+        <img src={imagen1.src} alt="Cohete">
+        <img src={imagen2.src} alt="No pares de aprender">
+    </div>
+    
     <section>
-        <h2>Inicia sesion en tu cuenta</h2>
+        <h2>Regístrate</h2>
         <form action="/">
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresa tus Nombres">
+            <input type="text" name="apellido" id="apellido" placeholder="Ingresa tus Apellidos">
             <input type="email" name="correo" id="email" placeholder="Correo Electrónico">
             <input type="password" name="contraseña" id="password" placeholder="Contraseña">
-            <input type="button" value="Inicia sesión" id="iniciaSec" > 
+            <input type="password" name="confirmar contraseña" id="confirmPassword" placeholder="Confirma tu Contraseña">
+            <input type="button" value="Regístrate" id="iniciaSec" > 
         </form>
-        <p>¿Olvidaste tu contraseña?</p>
-        <p>¿Aun no tienes cuenta? <a href="/registrate">Regístrate</a></p>   
+        <p>¿Ya tienes una cuenta? <span><a href="/InicioSesion">Inicia sesión</a></span></p>   
     </section>
 </div>
 
@@ -27,6 +33,13 @@ import imagen1 from '../assets/inicioSesion/aprender.svg';
         gap: 5%;
     }
 
+    .container__imagen{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     h2{
         color: rgb(124, 124, 124);
         text-align: center;
@@ -38,6 +51,11 @@ import imagen1 from '../assets/inicioSesion/aprender.svg';
     img{
         width: clamp(20rem, 25vw, 30rem);
     }
+
+    .container__imagen img:nth-child(1){
+        width: clamp(20rem, 18vw, 30rem);
+    }
+
     section{
         width: 25%;
     }
@@ -81,27 +99,21 @@ import imagen1 from '../assets/inicioSesion/aprender.svg';
         align-items: center;
     }
 
+    form{
+        gap: 10px   ;
+    }
+
     section p a{
         text-decoration: none;
         color: #F15151;
         font-weight: 700;
     }
 
-    form{
-        gap: 10px   ;
-    }
-
     p:nth-child(3){
-        color: #F15151;
         border-bottom: 1px solid;
         padding-bottom: 2%;
-        font-weight: 700;
     }
 
-    p:nth-child(4){
-        border-top: 1px solid rgb(223, 223, 223);
-        margin: 0;
-        padding-top: 5px;
-    }
+  
 
 </style>
