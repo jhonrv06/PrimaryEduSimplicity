@@ -1,13 +1,6 @@
 ---
 // src/components/SliderScript.astro
-import { eventSliderMoov } from '../scripts/doomInicio.ts';
+import scriptURL from '../scripts/doomInicio.ts?url';
 ---
 
-<script type="module" is:inline>
-    // IMPORTA AQUÍ la función usando la ruta que Vite expone en dev y en build:
-    import { eventSliderMoov } from '/src/scripts/doomInicio.ts';
-    
-    window.addEventListener('DOMContentLoaded', () => {
-        eventSliderMoov();
-    });
-  </script>
+<script type="module" src={scriptURL}></script>

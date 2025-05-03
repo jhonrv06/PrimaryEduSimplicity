@@ -1,4 +1,5 @@
 
+/*
 export function eventSliderMoov(){
 
     const BUTTONDERECHA = document.querySelector("#button1");
@@ -16,9 +17,9 @@ export function eventSliderMoov(){
             SLIDER.scrollBy({ left: -slideWidth, behavior: 'smooth' });
         });
     }
-}
+}*/
 
-/*
+
 export function eventSliderMoov(){
     console.log("hola");
-}*/
+}
