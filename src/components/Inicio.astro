@@ -1,6 +1,5 @@
 ---
 import imagenheader from '../assets/LogoPrimary.svg'
-import imagensilder from '../assets/Imagen2.png'
 import MachineL from '../assets/Machine_Learning.svg'
 import ImagenButton1 from '../assets/Imagenbutton1.svg'
 import ImagenButton2 from '../assets/Imagenbutton2.svg'
@@ -13,42 +12,19 @@ import escucha from '../assets/escucha.svg'
 import escritura from '../assets/escritura.svg'
 import lectura from '../assets/lectura.svg'
 import habla from '../assets/habla.svg'
-import Timetolearn from '../assets/inicio/Timetolearn.svg'
-import leftbutton from '../assets/inicio/leftbutton.svg'
-import Rigthbutton from '../assets/inicio/rightbutton.svg'
----
+import Slider from './tscomponet/slidercomponen.jsx'
+--- 
 
 <div id="container">
 	
 	<header>
 		<!-- <img src={Background_header.src} alt=""> -->
 		 <div class="container_conten">
-			<div class="buttons__container">
-				<img class="slider__buttons" id="button2" src={leftbutton.src} alt="leftbutton">
-				<img class="slider__buttons" id="button1" src={Rigthbutton.src} alt="rigthbutton">
-			 </div>
 			<div class="container_logo">
 				<h1><span class="container__span --Primary">PRIMARY</span> <span class="container__span --Edu">EDU</span> <br> <span class="container__span --simplicity">SIMPLICITY</span></h1>
 				<img src={imagenheader.src} alt="iamgenPrimary">
 		 	</div>
-			 <div class="slider">
-				<div class="slider__content">
-					<section class="slider__section" id="slider1">
-						<article class="slider__text">
-							<h2>Bienvenido</h2>
-							<p>En <span class="container__span --Primary">Primary </span><span class="container__span --Edu">Edu </span><span class="container__span --simplicity">Simplicity</span> Creamos materiales que motivan a los niños y facilitan tu trabajo</p> <button> Unete ahora</button>
-						</article>
-						<img src={imagensilder.src} alt="imagencomputadora">
-					</section>
-					<section class="slider__section" id="slider2">
-						<article class="slider__text">
-							<p>Docentes ayudando a docentes. Comparte ideas y crece junto a otros educadores.</p> 
-							<a href="/tusClases">Explora nuestros materiales</a>
-						</article>
-						<img src={Timetolearn.src} alt="imagencomputadora">
-					</section>
-				</div>
-			 </div>
+			<Slider client:load/>
 		 </div>
 	</header>
 	<main>
@@ -175,54 +151,6 @@ import Rigthbutton from '../assets/inicio/rightbutton.svg'
 		text-align: center;
 	}
 
-	.slider{
-		overflow: hidden;
-		position: relative;
-		width: 100%;
-		height: 400px;
-		background-color: #ffffff;
-		/*background-image: url("/src/assets/Background_header1.jpg");*/
-		background-size: cover;
-    	background-position: center;
-		display: flex;
-		justify-content: space-between;
-		line-height: 1.5;
-	}
-
-	.slider__content{
-		position: absolute;
-		width: 200%;
-		height: 400px;
-		display: flex;
-		scroll-snap-align: start;
-		scroll-snap-type: x mandatory;
-      	scroll-behavior: smooth;
-		overscroll-behavior-x: contain;
-	}
-
-	.slider__section{
-		width: 50%;
-		height: 400px;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		
-	}
-
-	.buttons__container{
-		display: flex;
-		width: 100%;
-		height: 50px;
-		justify-content: space-between;
-		position: absolute;
-		top: 60%;
-		z-index: 1;
-	}
-
-	.buttons__container img{
-		opacity: 0.4;
-	}
-
 
 	#button1:hover .slider__section{
 		border: 1px solid;
@@ -236,33 +164,6 @@ import Rigthbutton from '../assets/inicio/rightbutton.svg'
 		width: 30%;
 	}
 
-	.slider img{
-		width: clamp(5rem, 12vw, 20rem);
-	}
-
-	.slider p{	
-		border-bottom: 1px solid rgb(226, 226, 226);
-		padding-bottom: 2%;
-		
-	}
-
-	.slider span{
-		font-weight: 800;
-	}
-
-	.slider button{
-		font-size: clamp(0.8rem, 0.8vw, 0.7rem);
-		padding: clamp(0.4rem, 0.4vw, 1rem) clamp(0.4rem, 2vw, 2rem);
-		max-width: 90%;
-		min-width: 20px;
-		flex-grow: 1;
-		border: 0;
-		border-radius: 10px;
-		background-color: #F15151;
-		color: white;
-		font-weight: 800;
-		font-family: Calibri, 'Trebuchet MS', sans-serif;
-	}
 	.--Primary{
 		color: rgb(141, 141, 141);
 	}

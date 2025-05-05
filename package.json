@@ -4,12 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "build:ts": "tsc src/scripts/doomInicio.ts --outDir public/scripts",
+    "build": "pnpm run build:ts && astro build"
   },
   "dependencies": {
-    "astro": "^5.7.5"
+    "@astrojs/preact": "^4.0.11",
+    "astro": "^5.7.5",
+    "preact": "^10.26.5"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
