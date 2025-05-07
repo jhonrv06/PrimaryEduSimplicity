@@ -19,9 +19,3 @@ export function eventSliderMoov(){
     }
 }
 */
-
-
-export function eventSliderMoov(){
-    console.log("hola");
-}
-eventSliderMoov()  
