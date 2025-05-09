@@ -16,7 +16,7 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
                     ¡Gracias por ser parte de nuestra comunidad! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos. Atentamente, El Equipo de PrimaryEduSimplicity.
                 </p>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/zP0SfM2lHFA?si=5GF76pUj92xDnq1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="iframe__container" width="560" height="315" src="https://www.youtube.com/embed/zP0SfM2lHFA?si=5GF76pUj92xDnq1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </header>
     <section>
@@ -55,8 +55,9 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 		margin: 20px clamp(0px, 18vw, 400px);
 		display: flex;
         align-items: center;
-        justify-content: space-between;
-       
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2%;
     }
 
     section >.container__grupo{
@@ -65,9 +66,11 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
     }
 
     .container__text{
+        flex-grow: 1;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+        max-width: clamp(5rem, 27vw, 35rem);
     }
 
     .container__article{
@@ -101,7 +104,7 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 
     p{
         font-size: clamp(1rem, 1vw, 30rem);
-        width: clamp(5rem, 27vw, 35rem);
+        
         line-height: 1.5;
     }
  

@@ -4,6 +4,7 @@ const { title } = Astro.props
 import  './layout.css';
 import MenuResponsive from '../components/MenuResponsive.astro';
 import menu2 from '../assets/LayoutImag/menu-2.svg';
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -54,5 +55,6 @@ import menu2 from '../assets/LayoutImag/menu-2.svg';
 			</div>
 			<p>© 2025 PrimariEduSimplicity| All Rights Reserved</p>
 		</footer>
+		<Analytics/>
 	</body>
 </html>
