@@ -1,13 +1,11 @@
-import { useRef, useState } from 'preact/hooks';
+import { useRef, useState, useEffect } from 'preact/hooks';
 import {TEXTMODAL} from '../../scripts/modalArrayQuestions.ts'
 import  './modal.css';
-//import { POST } from '../../pages/api/endpointEncuesta.ts';
 
 export default function ModalSurvey() {
     const openM = useRef<HTMLDialogElement>(null);
     const [response, setResponse] = useState('');
-    const [dataResponse, setdataResponse] = useState({});
-    
+    const [dataResponse, setdataResponse] = useState({question: "", text:""});
 
     function closeModal() {
         openM.current?.close();
@@ -24,28 +22,31 @@ export default function ModalSurvey() {
             question: question,
             text: question2
         };
-
         setdataResponse(data);
         setResponse("Gracias por responder la encuesta");
         //console.log(data)
-        
         return data
     }
-
+    
     async function sendData() {
-        console.log(dataResponse);
         
-      
-    const POSTD = await fetch('api/endpointEncuesta', {
+    const POSTDATA = await fetch('api/endpointEncuesta', {
            method:  'POST',
            headers: {'content-type': 'application/json'},
            body: JSON.stringify(dataResponse),
     });
+    //const inf = await POSTDATA;
+    }
+    
+    
+    useEffect(()=>{
+        const isEmpty = Object.values(dataResponse).every(dataObj =>  dataObj == "");
 
-    //const inf = await POSTD;
-    //console.log(inf);
-
-}
+        if(!isEmpty){
+            console.log("ok")
+            sendData()
+        }
+    },[dataResponse])
 
     return(
     <>
@@ -79,7 +80,7 @@ export default function ModalSurvey() {
                         Ingresa un comentario
                         <input type="text" name="text1" id="Comentario"/>
                     </label>  
-                    <button type="submit" className="button__modal" onClick={sendData} >Enviar</button>
+                    <button type="submit" className="button__modal" >Enviar</button>
                 </form>
             </dialog>
         </section>
