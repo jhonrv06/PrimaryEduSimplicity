@@ -6,24 +6,30 @@ import Timetolearn from '../../assets/inicio/Timetolearn.svg'
 import imagensilder from '../../assets/inicio/Imagen2.png'
 
 export default  function SliderComponent(){
-    const elementRef = useRef(null);
-    const [currenWith, setCurent] = useState(0);
-    
-    
-    const movRigth = () =>{
-        elementRef.current.scrollBy({ 
-            left: currenWith, 
-            behavior: 'smooth' })
+    const elementRef = useRef<HTMLElement | null>(null);
+    const [currenWith, setCurrent] = useState(0);
+  
+    const movRight = () =>{
+        if(elementRef.current){
+            elementRef.current.scrollBy({ 
+                left: currenWith, 
+                behavior: 'smooth' })
+        }
     };
 
     const movLeft = () =>{
-        elementRef.current.scrollBy({ 
-            left: -currenWith, 
-            behavior: 'smooth' })
+        if(elementRef.current){
+            elementRef.current.scrollBy({ 
+                left: -currenWith, 
+                behavior: 'smooth' })
+        }
     };
 
     useEffect(() =>{
-        setCurent(elementRef.current.offsetWidth)
+        
+        if(elementRef.current){
+            setCurrent(elementRef.current.offsetWidth);
+        }
     },[])
 
     return(
@@ -50,7 +56,7 @@ export default  function SliderComponent(){
             <button onClick={movLeft} class="button__event">
                 <img src={left.src} alt="Mover slider" />
             </button>
-            <button onClick={movRigth} class="button__event">
+            <button onClick={movRight} class="button__event">
                 <img src={Right.src} alt="Mover slider" />
             </button>
         </section>

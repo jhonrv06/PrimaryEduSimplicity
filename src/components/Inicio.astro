@@ -12,11 +12,12 @@ import escucha from '../assets/escucha.svg'
 import escritura from '../assets/escritura.svg'
 import lectura from '../assets/lectura.svg'
 import habla from '../assets/habla.svg'
-import Slider from './tscomponet/slidercomponen.jsx'
+import Slider from './tscomponet/slidercomponen.tsx'
+import Modal from './tscomponet/ModalSurvey.tsx'
 --- 
 
 <div id="container">
-	
+	<Modal client:load/>
 	<header>
 		<!-- <img src={Background_header.src} alt=""> -->
 		 <div class="container_conten">
@@ -24,10 +25,12 @@ import Slider from './tscomponet/slidercomponen.jsx'
 				<h1><span class="container__span --Primary">PRIMARY</span> <span class="container__span --Edu">EDU</span> <br> <span class="container__span --simplicity">SIMPLICITY</span></h1>
 				<img src={imagenheader.src} alt="iamgenPrimary">
 		 	</div>
+			
 			<Slider client:load/>
 		 </div>
 	</header>
 	<main>
+		
 		<div class="container_main">
 			<header>
 				<img src={MachineL.src} alt="">
@@ -112,6 +115,14 @@ import Slider from './tscomponet/slidercomponen.jsx'
 		
 	}
 
+	#container {
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		height: 100%;
+		width: 100%;
+		flex-direction: column;
+		display: flex;
+	}
+
 	.container_logo{
 		display: flex;
 		justify-content: center;
@@ -174,14 +185,6 @@ import Slider from './tscomponet/slidercomponen.jsx'
 
 	.--simplicity{
 		color: #3C5983;
-	}
-
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-		width: 100%;
-		flex-direction: column;
-		display: flex;
 	}
 
 	.container_main header{
