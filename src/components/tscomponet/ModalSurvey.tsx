@@ -30,7 +30,7 @@ export default function ModalSurvey() {
     }
     
     async function sendData() {
-    const POSTDATA = await fetch('api/endpointEncuesta', {
+    await fetch('api/endpointEncuesta', {
            method:  'POST',
            headers: {'content-type': 'application/json'},
            body: JSON.stringify(dataResponse),
