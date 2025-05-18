@@ -1,5 +1,12 @@
 {
 	"version": 3,
+		"functions": {
+		"_render.func": {
+		"runtime": "nodejs18.x",
+		"handler": "_render.func/index.mjs",
+		"maxDuration": 10
+		}
+	},
 	"routes": [
 		{
 			"handle": "filesystem"
@@ -42,6 +49,7 @@
 		{
 			"src": "^/$",
 			"dest": "_render"
-		}
+		},
+		{ "src": "/(.*)", "dest": "_render" }
 	]
 }
