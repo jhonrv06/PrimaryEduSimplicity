@@ -25,7 +25,6 @@ export default function ModalSurvey() {
         };
         setdataResponse(data);
         setResponse("Gracias por responder la encuesta");
-        //console.log(data)
         return data
     }
     
@@ -40,10 +39,10 @@ export default function ModalSurvey() {
 
 
     useEffect(()=>{
+//comprobar si dataResponse esta con datos para no enviar datos vacíos al enpoind
         const isEmpty = Object.values(dataResponse).every(dataObj =>  dataObj == "");
 
         if(!isEmpty){
-            console.log("ok");
             sendData();
             setMesagge("form__message");
         }
