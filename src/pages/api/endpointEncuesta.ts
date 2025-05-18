@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
     catch (error) {
         console.error('Error:', error);}
-        return Response.json({mensaje: "Error"}); 
+        return Response.json( "Error interno", {status: 500}); 
 }
  
 
