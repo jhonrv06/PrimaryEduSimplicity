@@ -1,5 +1,5 @@
-import { c as createComponent, m as maybeRenderHead, a as addAttribute, r as renderTemplate, b as createAstro, d as renderComponent } from '../chunks/astro/server_XIBxkixS.mjs';
-import { c as createSvgComponent, $ as $$MainLayout } from '../chunks/MainLayout_CVzw8EEN.mjs';
+import { c as createComponent, m as maybeRenderHead, a as addAttribute, r as renderTemplate, b as createAstro, d as renderComponent } from '../chunks/astro/server_DvIUdaTV.mjs';
+import { c as createSvgComponent, $ as $$MainLayout } from '../chunks/MainLayout_2Sp7B5VD.mjs';
 /* empty css                                        */
 export { renderers } from '../renderers.mjs';
 

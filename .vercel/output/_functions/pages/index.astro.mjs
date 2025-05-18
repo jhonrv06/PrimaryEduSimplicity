@@ -1,5 +1,5 @@
-import { c as createComponent, m as maybeRenderHead, d as renderComponent, a as addAttribute, r as renderTemplate, b as createAstro } from '../chunks/astro/server_XIBxkixS.mjs';
-import { c as createSvgComponent, i as imagenheader, $ as $$MainLayout } from '../chunks/MainLayout_CVzw8EEN.mjs';
+import { c as createComponent, m as maybeRenderHead, d as renderComponent, a as addAttribute, r as renderTemplate, b as createAstro } from '../chunks/astro/server_DvIUdaTV.mjs';
+import { c as createSvgComponent, i as imagenheader, $ as $$MainLayout } from '../chunks/MainLayout_2Sp7B5VD.mjs';
 import { useRef, useState, useEffect } from 'preact/hooks';
 /* empty css                                 */
 import { jsxs, Fragment, jsx } from 'preact/jsx-runtime';

@@ -1,6 +1,6 @@
-import { c as createComponent, m as maybeRenderHead, r as renderTemplate, d as renderComponent } from '../chunks/astro/server_XIBxkixS.mjs';
+import { c as createComponent, m as maybeRenderHead, r as renderTemplate, d as renderComponent } from '../chunks/astro/server_DvIUdaTV.mjs';
 /* empty css                                     */
-import { $ as $$MainLayout } from '../chunks/MainLayout_CVzw8EEN.mjs';
+import { $ as $$MainLayout } from '../chunks/MainLayout_2Sp7B5VD.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$TusClasesContenido = createComponent(($$result, $$props, $$slots) => {
