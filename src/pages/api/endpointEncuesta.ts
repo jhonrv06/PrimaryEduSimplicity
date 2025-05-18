@@ -12,7 +12,7 @@ export const POST: APIRoute = async ({ request }) => {
             .from('encuestas_respuestas')
             .insert([
             {
-                respuesta: question,
+                respuesta: question,  
                 respuesta_texto: text,
                 fecha: new Date(),
             }
