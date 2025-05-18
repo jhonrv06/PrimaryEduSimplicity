@@ -9,6 +9,7 @@
     "dist"
   ],
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   }

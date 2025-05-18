@@ -262,6 +262,7 @@ const $$Inicio = createComponent(($$result, $$props, $$slots) => {
 }, "/home/jhon/Desarrollo_Web/PrimaryEduSimplicity/src/components/Inicio.astro", void 0);
 
 const $$Astro = createAstro();
+const prerender = false;
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;
@@ -275,6 +276,7 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	default: $$Index,
 	file: $$file,
+	prerender,
 	url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
