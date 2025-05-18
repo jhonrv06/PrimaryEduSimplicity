@@ -6,11 +6,11 @@
     "dev": "astro dev",
     "preview": "astro preview",
     "astro": "astro",
-    "build:ts": "tsc src/scripts/doomInicio.ts --outDir public/scripts",
-    "build": "pnpm run build:ts && astro build"
+    "build": "astro build"
   },
   "dependencies": {
     "@astrojs/preact": "^4.0.11",
+    "@astrojs/vercel": "^8.1.4",
     "@supabase/supabase-js": "^2.49.4",
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.7.5",

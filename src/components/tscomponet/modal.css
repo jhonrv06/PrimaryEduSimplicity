@@ -10,6 +10,19 @@
     bottom: 5%;
 }
 
+.form__message{
+    visibility: hidden;
+}
+
+.textmodal__form{
+    color: #1e5785;
+}
+
+p{
+    position: absolute;
+    margin-top: 20%;
+}
+
 form label{
     display: block;
     margin: 10px 0;

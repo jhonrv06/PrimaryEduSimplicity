@@ -1,4 +1,4 @@
-import {supabase} from '../../lib/supabase.ts';
+//import {supabase} from '../../lib/supabase.ts';
 import type { APIRoute } from 'astro';
 export const prerender = false;
 
@@ -6,6 +6,7 @@ export const POST: APIRoute = async ({ request }) => {
    
     try {   
         const {question, text } = await request.json();
+        /*
         const {data, error} = await supabase
             .from('encuestas_respuestas')
             .insert([
@@ -16,13 +17,12 @@ export const POST: APIRoute = async ({ request }) => {
             }
             
         ])
-       
         
        if(error){
         console.log("error al insertar datos", error);
        }else{
         console.log("datos insertados ", data);
-       }
+       }*/
 
      return Response.json({mensaje: "funciona"});
     }

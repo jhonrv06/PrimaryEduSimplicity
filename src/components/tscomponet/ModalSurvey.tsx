@@ -6,9 +6,10 @@ export default function ModalSurvey() {
     const openM = useRef<HTMLDialogElement>(null);
     const [response, setResponse] = useState('');
     const [dataResponse, setdataResponse] = useState({question: "", text:""});
+    const [mesagge, setMesagge] = useState("");
 
     function closeModal() {
-        openM.current?.close();
+       openM.current?.close();
     }
 
     async function getData(e: Event) {
@@ -29,7 +30,6 @@ export default function ModalSurvey() {
     }
     
     async function sendData() {
-        
     const POSTDATA = await fetch('api/endpointEncuesta', {
            method:  'POST',
            headers: {'content-type': 'application/json'},
@@ -37,14 +37,15 @@ export default function ModalSurvey() {
     });
     //const inf = await POSTDATA;
     }
-    
-    
+
+
     useEffect(()=>{
         const isEmpty = Object.values(dataResponse).every(dataObj =>  dataObj == "");
 
         if(!isEmpty){
-            console.log("ok")
-            sendData()
+            console.log("ok");
+            sendData();
+            setMesagge("form__message");
         }
     },[dataResponse])
 
@@ -52,10 +53,12 @@ export default function ModalSurvey() {
     <>
         <section class="containerModal">
             <dialog class="modal__container" id="modal" open ref={openM}>
-                <button onClick={closeModal}>X</button>
-                <h3>{TEXTMODAL[0]}</h3>
-                <p>{response}</p>
-                <form  onSubmit={getData} >
+                <header>
+                    <button onClick={closeModal}>X</button>
+                    <h3>{TEXTMODAL[0]}</h3>
+                    <p>{response}</p>
+                </header>
+                <form className={mesagge}  onSubmit={getData} >
                     <label>
                         <input type="radio" name="question" id="MuyFacil" value="MuyFacil" />
                         Muy fácil
