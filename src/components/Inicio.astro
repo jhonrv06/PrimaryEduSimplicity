@@ -14,6 +14,7 @@ import lectura from '../assets/lectura.svg'
 import habla from '../assets/habla.svg'
 import Slider from './tscomponet/slidercomponen.tsx'
 import Modal from './tscomponet/ModalSurvey.tsx'
+import TusClasesC from './tscomponet/tusClasesContenido.tsx'
 --- 
 
 <div id="container">
@@ -25,13 +26,12 @@ import Modal from './tscomponet/ModalSurvey.tsx'
 				<h1><span class="container__span --Primary">PRIMARY</span> <span class="container__span --Edu">EDU</span> <br> <span class="container__span --simplicity">SIMPLICITY</span></h1>
 				<img src={imagenheader.src} alt="iamgenPrimary">
 		 	</div>
-			
 			<Slider client:load/>
 		 </div>
 	</header>
 	<main>
-		
 		<div class="container_main">
+			 <TusClasesC client:load/>
 			<header>
 				<img src={MachineL.src} alt="">
 				<div class="container_text">
@@ -39,6 +39,7 @@ import Modal from './tscomponet/ModalSurvey.tsx'
 					<p>PrimaryEduSimplicity te brinda acceso gratuito al material didáctico necesario para tus clases. Simplemente selecciona tu grado y utiliza nuestros recursos en tus lecciones.</p>
 				</div>
 			</header>
+			
 			<div class="container_buttons">
 				<div class="buttons_imagen">
 					<div class="container_buttons2">

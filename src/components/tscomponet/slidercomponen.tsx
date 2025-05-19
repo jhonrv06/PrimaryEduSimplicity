@@ -5,7 +5,7 @@ import Right from '../../assets/inicio/rightbutton.svg'
 import Timetolearn from '../../assets/inicio/Timetolearn.svg'
 import imagensilder from '../../assets/inicio/Imagen2.png'
 
-export default  function SliderComponent(){
+export default function SliderComponent(){
     const elementRef = useRef<HTMLElement | null>(null);
     const [currenWith, setCurrent] = useState(0);
   
