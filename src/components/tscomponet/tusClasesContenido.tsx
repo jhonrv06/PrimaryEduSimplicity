@@ -1,7 +1,6 @@
 import {useEffect} from  'preact/hooks'
 
 export default  function contentCourse (){
-     
     
     useEffect(()=>{
         const obtenerData  = async () =>{
@@ -19,15 +18,22 @@ export default  function contentCourse (){
     
     return(
         <>
-        <section class="container">
-            <article class="section__container --transición">
-                <h3>Transición</h3>
-                <p></p>
-            </article>
+        <section className="container">
+            <section className="container__data">
+                <h3>Primero periodo</h3>
+                <details>
+                <summary>lección 1</summary>
+                    <h4>Actividad 1</h4> 
+                    <h4>Actividad 1</h4> 
+                    <h4>Actividad 1</h4> 
+            </details>
+
+            </section>
+            
             <article class="section__container --primero">
                 <h3>Primero</h3>
                 <p></p>
-            </article>
+            </article>  
             <article class="section__container --segundo">
                 <h3>Segundo</h3>
                 <p></p>

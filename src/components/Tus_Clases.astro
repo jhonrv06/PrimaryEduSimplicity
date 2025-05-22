@@ -1,6 +1,8 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
+import TusClasesC from './TusClasesContenido.astro'
+const { guia1 } = Astro.props;
 ---
 
 <div class="container">
@@ -15,7 +17,7 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
             <button class="button" id="Quinto">Quinto</button>
          </aside>
          <main>
-          
+            <TusClasesC guia1={guia1}/>
          </main>
     </div>
 </div>

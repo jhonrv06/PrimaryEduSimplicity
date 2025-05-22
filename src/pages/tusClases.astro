@@ -1,8 +1,21 @@
 ---
 import Tus_Clases from '../components/Tus_Clases.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import {getMedia, getGrados} from '../lib/WorpressH';
+
+const pagename = "Transición";
+
+const grados = await getGrados();
+const gradoId = grados.find( grado =>{ return grado.name === pagename });
+
+
+const media = await getMedia(gradoId.id);
+const guia1 = String(media[0].link);
+
+console.log(guia1)
+const saludo = "Hola";
 ---
 
 <MainLayout title="Tus cursos">
-	<Tus_Clases />
+	<Tus_Clases guia1={guia1}/>
 </MainLayout>
