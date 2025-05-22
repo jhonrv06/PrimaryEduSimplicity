@@ -1,8 +1,27 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
-import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
-import TusClasesC from './tscomponet/tusClasesContenido.tsx'
-const { guia1 } = Astro.props;
+const { media, periodos } = Astro.props;
+
+const guias = media;
+const periodo = periodos;
+
+
+console.log(guias)
 ---
 
-<a href={guia1}>Descarga</a>
+{
+    periodo.map(({name, id}) => (
+
+        <section class="section__periodos">
+            <h3>{name}</h3>
+                {
+                 guias.filter(({periodo}) => periodo[0] === id)
+                    .map(({title, link}) =>(
+                        <p>{title.rendered}</p>
+                        <a href={link}>Descarga</a>
+            ))
+                }
+        </section>
+         
+    ))
+}

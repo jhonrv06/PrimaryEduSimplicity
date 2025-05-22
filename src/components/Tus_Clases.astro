@@ -2,7 +2,7 @@
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 import TusClasesC from './TusClasesContenido.astro'
-const { guia1 } = Astro.props;
+const { media, periodos } = Astro.props;
 ---
 
 <div class="container">
@@ -17,7 +17,7 @@ const { guia1 } = Astro.props;
             <button class="button" id="Quinto">Quinto</button>
          </aside>
          <main>
-            <TusClasesC guia1={guia1}/>
+            <TusClasesC media={media} periodos={periodos}/>
          </main>
     </div>
 </div>
