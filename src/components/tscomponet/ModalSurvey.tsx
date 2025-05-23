@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'preact/hooks';
 import {TEXTMODAL} from '../../scripts/modalArrayQuestions.ts'
-import  './modal.css';
+import  './styles/modal.css';
 
 export default function ModalSurvey() {
     const openM = useRef<HTMLDialogElement>(null);

@@ -1,11 +1,14 @@
 ---
 import Tus_Clases from '../components/Tus_Clases.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import {getMedia, getGrados, getPeriodos} from '../lib/WorpressH';
+import {getMedia, getRecurses, getPeriodos, getGrados} from '../lib/WorpressH';
 
 const pagename = "Transición";
 
+const habilidades = await getRecurses("grado");
+
 const grados = await getGrados();
+console.log(habilidades)
 const periodos = await getPeriodos();
 
 const gradoId = grados.find( grado =>{ return grado.name === pagename });

@@ -2,19 +2,14 @@
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 import TusClasesC from './TusClasesContenido.astro'
+import TusClasesNav from './tscomponet/tusClasesNav'
 const { media, periodos } = Astro.props;
 ---
 
 <div class="container">
     <div class="container__grupo">
          <aside>
-            <h3>Cursos</h3>
-            <button class="button" id="Transición">Transición</button>
-            <button class="button" id="Primero">Primero</button>
-            <button class="button" id="Segundo">Segundo</button>
-            <button class="button" id="Tercero">Tercero</button>
-            <button class="button" id="Cuarto">Cuarto</button>
-            <button class="button" id="Quinto">Quinto</button>
+            <TusClasesNav />
          </aside>
          <main>
             <TusClasesC media={media} periodos={periodos}/>
@@ -37,25 +32,6 @@ const { media, periodos } = Astro.props;
         width: 15%;
         max-width: 15%;
         
-    }
-    button{
-        font-size: clamp(0.8rem, 0.8vw, 0.7rem);
-		padding: clamp(0.4rem, 0.4vw, 1rem);
-        background-color: rgba(255, 255, 255, 0);
-		min-width: 20px;    
-        border: 0;
-       
-        margin-bottom: 20px;
-        text-align: left;
-        color: rgb(66, 66, 66);
-        box-sizing: content-box;
-        border-bottom: 1px solid rgb(218, 218, 218);
-        border-left: 2px solid #f1515100;
-    }
-
-    button:hover{
-        border-left: 2px solid #F15151;
-        color: #F15151;
     }
 
     main{

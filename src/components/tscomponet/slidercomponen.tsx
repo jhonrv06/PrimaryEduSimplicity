@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef} from  'preact/hooks'
-import  './sliderstyle.css';
+import  './styles/sliderstyle.css';
 import left from '../../assets/inicio/leftbutton.svg'
 import Right from '../../assets/inicio/rightbutton.svg'
 import Timetolearn from '../../assets/inicio/Timetolearn.svg'
