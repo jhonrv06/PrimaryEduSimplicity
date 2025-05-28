@@ -1,24 +1,27 @@
 ---
+import { string } from 'astro:schema';
 import Tus_Clases from '../components/Tus_Clases.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import {getMedia, getRecurses, getPeriodos, getGrados} from '../lib/WorpressH';
+import {getMedia, getRecurses, getAllMedia} from '../lib/WorpressH';
 
 const pagename = "Transición";
 
-const habilidades = await getRecurses("grado");
+const habilidades = await getRecurses("habilidad");
+const grados = await getRecurses("grado");
+const periodos = await getRecurses("periodo");
 
-const grados = await getGrados();
-console.log(habilidades)
-const periodos = await getPeriodos();
 
-const gradoId = grados.find( grado =>{ return grado.name === pagename });
-
+const gradoId = grados.find( ({name}) =>{  return name  === pagename });
 const media = await getMedia(gradoId.id);
+
+const habilidadesId = habilidades.map( ({id}) => id )
+
+const allMedia = await getAllMedia(habilidadesId.toString());
 
 //console.log(periodos)
 
 ---
 
 <MainLayout title="Tus cursos">
-	<Tus_Clases media={media} periodos={periodos} />
+	<Tus_Clases media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia} />
 </MainLayout>

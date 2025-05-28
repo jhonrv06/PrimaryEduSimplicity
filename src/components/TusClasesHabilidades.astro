@@ -1,19 +1,21 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
-const { media, periodos } = Astro.props;
+const { allMedia, habilidades } = Astro.props;
 
-const guias = media;
-const periodo = periodos;
+const allguias = allMedia;
+const habilidad = habilidades;
+
+//console.log(allguias)
 
 ---
 
-{
-    periodo.map(({name, id}) => (
+{   
+    habilidad.map(({name, id}) => (
 
         <section class="section__periodos">
             <h3>{name}</h3>
                 {
-                 guias.filter(({periodo}) => periodo[0] === id)
+                 allguias.filter(({habilidad}) => habilidad.includes(id))
                     .map(({title, link}) =>(
                         <p>{title.rendered}</p>
                         <a href={link}>Descarga</a>

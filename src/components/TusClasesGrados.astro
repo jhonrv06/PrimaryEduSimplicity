@@ -1,0 +1,25 @@
+---
+import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
+const { media, periodos } = Astro.props;
+
+const guias = media;
+const periodo = periodos;
+
+---
+
+{   
+    periodo.map(({name, id}) => (
+
+        <section class="section__periodos">
+            <h3>{name}</h3>
+                {
+                 guias.filter(({periodo}) => periodo[0] === id)
+                    .map(({title, link}) =>(
+                        <p>{title.rendered}</p>
+                        <a href={link}>Descarga</a>
+            ))
+                }
+        </section>
+         
+    ))
+}
