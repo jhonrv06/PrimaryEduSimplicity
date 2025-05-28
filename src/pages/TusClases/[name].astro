@@ -4,16 +4,15 @@ import Tus_Clases from '../../components/Tus_Clases.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import {getMedia, getRecurses, getAllMedia} from '../../lib/WorpressH';
 
-
+const param = Astro.params.name;
 
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
 	console.log(grados)
 	return grados.map( ({name}) => ({ params: {name}}) )
-
 }
 
-const param = Astro.params.name;
+
 
 
 //console.log(param)
@@ -32,7 +31,6 @@ const habilidadesId = habilidades.map( ({id}) => id )
 const allMedia = await getAllMedia(habilidadesId.toString());
 
 //console.log(periodos)
-export const prerender = true;
 ---
 
 

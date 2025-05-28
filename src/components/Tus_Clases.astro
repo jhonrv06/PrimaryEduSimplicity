@@ -5,7 +5,6 @@ import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
 const { media, periodos, habilidades, allMedia } = Astro.props;
-export const prerender = true;
 ---
 
 <div class="container">
@@ -20,7 +19,7 @@ export const prerender = true;
             </details>
             <details  class="Habilidades">
                 <summary>Habilidades</summary>
-                <TusClasesHabilidades server:defer media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
+                <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
             </details>
          </main>
     </div>
