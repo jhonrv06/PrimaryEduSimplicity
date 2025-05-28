@@ -8,7 +8,7 @@ const param = Astro.params.name;
 
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
-	console.log(grados)
+	
 	return grados.map( ({name}) => ({ params: {name}}) )
 }
 
@@ -25,7 +25,7 @@ const periodos = await getRecurses("periodo");
 
 const gradoId = grados.find( ({name}) =>{  return name  === param });
 const media = await getMedia(gradoId.id);
-
+console.log(media)
 const habilidadesId = habilidades.map( ({id}) => id )
 
 const allMedia = await getAllMedia(habilidadesId.toString());

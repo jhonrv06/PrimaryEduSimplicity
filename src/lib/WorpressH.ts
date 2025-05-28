@@ -48,7 +48,13 @@ export async function getMedia(dataG: string) {
     try{
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&grado=${dataG}&per_page=100`);
         const dataMedia = await response.json();
-        return dataMedia
+
+        const filtermedia = dataMedia.map( ({title, link, periodo}) => {
+
+            return {title, link, periodo}
+        })
+
+        return filtermedia
 
     }catch(error){
         console.log(`Error al obtener los datos ${error}`)
