@@ -12,9 +12,9 @@ export default  function contentNav (){
                 <button className="grados">Grados</button>
                 <nav class="grados_list" >
                     <ul>
-                        <li>Transición</li>
+                        <li><a href="Transición">Transición</a></li>
                         <li><a href="Primero">Primero</a></li>
-                        <li>Segundo</li>
+                        <li></li>
                         <li>Tercero</li>
                         <li>Cuarto</li>
                         <li>Quinto</li>

@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Primarylogo from '../assets/LogoPrimary.svg';
 const { title } = Astro.props
 import  './layout.css';
@@ -20,6 +21,7 @@ import Analytics from '@vercel/analytics/astro'
 		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Adamina&family=Cardo:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Adamina&family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
 	</head>
 	<body>
 		<header class="header__container">
@@ -33,7 +35,7 @@ import Analytics from '@vercel/analytics/astro'
 				<ul>
 					<li><a href="/">Inicio</a></li>
 					<li><a href="/nosotros">Sobre nosotros</a></li>
-					<li><a href="/tusClases">Tus clases</a></li>
+					<li><a href="/TusClases/Transición">Tus clases</a></li>
 					<li><a href="">Dashboard</a></li>
 				</ul>
 			</nav>
