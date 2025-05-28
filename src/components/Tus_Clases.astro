@@ -15,7 +15,7 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
          <main>
             <details  class="grados">
                 <summary>Grados</summary>
-                <TusClasesGrados server:defer media={media} periodos={   periodos}/>
+                <TusClasesGrados media={media} periodos={   periodos}/>
             </details>
             <details  class="Habilidades">
                 <summary>Habilidades</summary>
