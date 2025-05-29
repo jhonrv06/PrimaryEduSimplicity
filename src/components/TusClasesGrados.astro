@@ -1,11 +1,10 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 const { media, periodos } = Astro.props;
-
 const guias = media;
 const ordenPeriodos = [...periodos]
-
 const pruebOrden = ordenPeriodos.sort((a,b) => a.slug-b.slug );
+import  './styles/TusClasesStyles.css';
 
 ---
 
@@ -17,8 +16,11 @@ const pruebOrden = ordenPeriodos.sort((a,b) => a.slug-b.slug );
                 {
                  guias.filter(({periodo}) => periodo[0] === id)
                     .map(({title, link}) =>(
-                        <p>{title.rendered}</p>
-                        <a href={link}>Descarga</a>
+
+                        <article class="content__data">
+                            <p>{title.rendered}</p>
+                            <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
+                        </article>       
             ))
                 }
         </section>

@@ -28,13 +28,56 @@ const { media, periodos, habilidades, allMedia, param } = Astro.props;
 <style>
 
     .detaills__container {
-        
+        margin-bottom: 5px;
+        margin-left: 50px;
     }
 
     .sumary{
-        height: 50px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        height: 100px;
         background-color: #F15151;
         color: white;
+        font-weight: 700;
+        box-shadow: 0 0 5px #0202024d;
+        transition: 1s ;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+
+    .sumary::after{
+        content: '';
+        height: 30px;
+        width: 30px;
+        background: url('/icons/chevron-down.svg') no-repeat ;
+        background-size: cover;
+        margin-left: .75em;
+        transition: 0.2s;
+    }
+
+    .detaills__container::details-content{
+        opacity: 0;
+        transition:
+            opacity 600ms,
+            content-visibility 600ms allow-discrete;
+    }
+
+    .detaills__container[open]::details-content {
+        opacity: 1;
+    }
+
+    .detaills__container[open] .sumary{
+        height: 50px;
+    }
+
+    .detaills__container[open] .sumary::after{
+        transform: rotate(180deg)
+    }
+
+    .contenido{
+        display: flex;
+        flex-direction: column;
     }
 
     .container__grupo{

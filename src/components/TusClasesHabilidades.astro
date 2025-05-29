@@ -1,7 +1,7 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
+import  './styles/TusClasesStyles.css';
 const { allMedia, habilidades } = Astro.props;
-
 const allguias = allMedia;
 const habilidad = habilidades;
 
@@ -17,8 +17,11 @@ const habilidad = habilidades;
                 {
                  allguias.filter(({habilidad}) => habilidad.includes(id))
                     .map(({title, link}) =>(
+                    <section class="content__data">
                         <p>{title.rendered}</p>
-                        <a href={link}>Descarga</a>
+                        <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
+                    </section>
+                        
             ))
                 }
         </section>
