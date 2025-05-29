@@ -1,9 +1,6 @@
-import {useEffect} from  'preact/hooks'
 import  './styles/navGrados.css';
 
 export default  function contentNav (){
-
-
 
 
     return(
@@ -14,10 +11,10 @@ export default  function contentNav (){
                     <ul>
                         <li><a href="Transición">Transición</a></li>
                         <li><a href="Primero">Primero</a></li>
-                        <li></li>
-                        <li>Tercero</li>
-                        <li>Cuarto</li>
-                        <li>Quinto</li>
+                        <li><a href="Segundo">Segundo</a></li>
+                        <li><a href="Tercero">Tercero</a></li>
+                        <li><a href="Cuarto">Cuarto</a></li>
+                        <li><a href="Quinto">Quinto</a></li>
                     </ul>
                 </nav>
             </section>

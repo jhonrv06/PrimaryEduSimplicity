@@ -13,11 +13,11 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
             <TusClasesNav />
          </aside>
          <main>
-            <details  class="grados">
+            <details  class="detaills__container --grados">
                 <summary>Grados</summary>
                 <TusClasesGrados media={media} periodos={   periodos}/>
             </details>
-            <details  class="Habilidades">
+            <details  class="detaills__container Habilidades">
                 <summary>Habilidades</summary>
                 <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
             </details>
@@ -26,6 +26,9 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
 </div>
 
 <style>
+    .detaills__container {
+        border: 1px solid violet;
+    }
     .container__grupo{
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         position: sticky;
@@ -39,7 +42,6 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
         flex-direction: column;
         width: 15%;
         max-width: 15%;
-        
     }
 
     .container__grupo main{

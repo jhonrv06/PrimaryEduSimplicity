@@ -30,11 +30,11 @@ export async function getRecurses(data: string) {
             
            } )
         )
-
+        
         const getValueGrados = response[indice].map( grado =>{
-            const  {name, id} = grado;
+            const  {name, id, slug} = grado;
 
-            return {name, id}
+            return {name, id, slug}
         })
         
         return getValueGrados;
