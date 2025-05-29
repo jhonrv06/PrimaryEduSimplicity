@@ -4,7 +4,7 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
-const { media, periodos, habilidades, allMedia } = Astro.props;
+const { media, periodos, habilidades, allMedia, param } = Astro.props;
 ---
 
 <div class="container">
@@ -12,13 +12,13 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
          <aside>
             <TusClasesNav />
          </aside>
-         <main>
-            <details  class="detaills__container --grados">
-                <summary>Grados</summary>
+         <main class="contenido">
+            <details role="main"  class="detaills__container --grados">
+                <summary class="sumary">{`Grado ${param}`}</summary>
                 <TusClasesGrados media={media} periodos={   periodos}/>
             </details>
-            <details  class="detaills__container Habilidades">
-                <summary>Habilidades</summary>
+            <details role="main"  class="detaills__container Habilidades">
+                <summary class="sumary">Habilidades</summary>
                 <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
             </details>
          </main>
@@ -26,9 +26,17 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
 </div>
 
 <style>
+
     .detaills__container {
-        border: 1px solid violet;
+        
     }
+
+    .sumary{
+        height: 50px;
+        background-color: #F15151;
+        color: white;
+    }
+
     .container__grupo{
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         position: sticky;
@@ -48,6 +56,7 @@ const { media, periodos, habilidades, allMedia } = Astro.props;
         flex: 1;
         width: 100%;
         height: 100%;
+      
     }
 
     h3{
