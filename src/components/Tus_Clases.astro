@@ -4,7 +4,9 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
+
 const { media, periodos, habilidades, allMedia, param } = Astro.props;
+
 ---
 
 <div class="container">
@@ -13,14 +15,17 @@ const { media, periodos, habilidades, allMedia, param } = Astro.props;
             <TusClasesNav />
          </aside>
          <main class="contenido">
+
             <details role="main"  class="detaills__container --grados">
-                <summary class="sumary">{`Grado ${param}`}</summary>
-                <TusClasesGrados media={media} periodos={   periodos}/>
+                <summary class="sumary">{`Grado ${param}`}
+                </summary>
+                <TusClasesGrados media={media} periodos={periodos}/>
             </details>
             <details role="main"  class="detaills__container Habilidades">
                 <summary class="sumary">Habilidades</summary>
                 <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
             </details>
+        
          </main>
     </div>
 </div>
@@ -38,7 +43,7 @@ const { media, periodos, habilidades, allMedia, param } = Astro.props;
         align-items: center;
         height: 100px;
         background-color: #F15151;
-        color: white;
+        color: rgb(255, 255, 255);
         font-weight: 700;
         box-shadow: 0 0 5px #0202024d;
         transition: 1s ;

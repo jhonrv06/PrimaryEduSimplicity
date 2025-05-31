@@ -2,11 +2,12 @@
 import { string } from 'astro:schema';
 import Tus_Clases from '../../components/Tus_Clases.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
-import {getMedia, getRecurses, getAllMedia} from '../../lib/WorpressH';
+import {getMedia, getRecurses, getHabilitis, getAllMedia} from '../../lib/WorpressH';
 
 const param = Astro.params.name;
 
 
+const allRecurses = getAllMedia();
 
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
@@ -17,14 +18,14 @@ const habilidades = await getRecurses("habilidad");
 const grados = await getRecurses("grado");
 const periodos = await getRecurses("periodo");
 
-console.log(param)
+//console.log(param)
 
 const gradoId = grados.find( ({name}) =>{  return name  === param });
 const media = await getMedia(gradoId.id);
 
 const habilidadesId = habilidades.map( ({id}) => id )
 
-const allMedia = await getAllMedia(habilidadesId.toString());
+const allMedia = await getHabilitis(habilidadesId.toString());
 
 //export const prerender = true;
 ---

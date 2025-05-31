@@ -1,3 +1,4 @@
+import type { NumericLiteral } from "typescript";
 
 const WP = import.meta.env.WP_BASE_URL;
 const routeApi: string = "/wp-json/wp/v2/";
@@ -61,7 +62,9 @@ export async function getMedia(dataG: string) {
     }
 }
 
-export async function getAllMedia(idHabilidades) {
+
+
+export async function getHabilitis(idHabilidades: string) {
     try{
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&habilidad=${idHabilidades}`);
         const dataMedia = await response.json();
@@ -70,4 +73,33 @@ export async function getAllMedia(idHabilidades) {
     }catch(error){
         console.log(`Error al obtener los datos ${error}`)
     }
+}
+
+export async function  getAllMedia() {
+ 
+      try{
+        let totalData = [];
+
+        const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100`);
+        const pagesTotal = response.headers.get('X-WP-TotalPages');
+        const dataMedia = await response.json();
+        
+
+       for( let i = 1; i < pagesTotal; i++){
+        const response1 = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&page=${pagesTotal}`);
+        const dataMedia1 = await response1.json();
+        
+        
+        totalData = [...dataMedia1, ...dataMedia]
+        
+       }
+    
+        console.log(totalData.length)
+    
+        return pagesTotal
+
+    }catch(error){
+        console.log(`Error al obtener los datos ${error}`)
+    }
+
 }
