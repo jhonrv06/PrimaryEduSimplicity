@@ -2,14 +2,13 @@
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 const { media, periodos } = Astro.props;
 const guias = media;
-const ordenPeriodos = [...periodos]
-const pruebOrden = ordenPeriodos.sort((a,b) => a.slug-b.slug );
+const ordenPeriodos = [...periodos].sort((a,b) => a.slug-b.slug );
 import  './styles/TusClasesStyles.css';
 
 ---
 
 {   
-    pruebOrden.map(({name, id}) => (
+    ordenPeriodos.map(({name, id}) => (
 
         <section class="section__periodos">
             <h3>{name}</h3>

@@ -7,7 +7,7 @@ import {getMedia, getRecurses, getHabilitis, getAllMedia} from '../../lib/Worpre
 const param = Astro.params.name;
 
 
-const allRecurses = getAllMedia();
+const allRecurses = await getAllMedia();
 
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
@@ -18,19 +18,25 @@ const habilidades = await getRecurses("habilidad");
 const grados = await getRecurses("grado");
 const periodos = await getRecurses("periodo");
 
-//console.log(param)
-
 const gradoId = grados.find( ({name}) =>{  return name  === param });
 const media = await getMedia(gradoId.id);
 
 const habilidadesId = habilidades.map( ({id}) => id )
 
-const allMedia = await getHabilitis(habilidadesId.toString());
+const allHabilidades = await getHabilitis(habilidadesId.toString());
 
 //export const prerender = true;
 ---
 
 
 <MainLayout title="Tus cursos">
-	<Tus_Clases media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia} param={param}/>
+	<Tus_Clases 
+		media={media} 
+		allRecurses={allRecurses}  
+		periodos={periodos} 
+		habilidades={habilidades} 
+		allHabilidades={allHabilidades} 
+		param={param}
+		grados={grados}
+	/>
 </MainLayout>

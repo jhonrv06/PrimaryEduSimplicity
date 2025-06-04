@@ -5,7 +5,12 @@ import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
 
-const { media, periodos, habilidades, allMedia, param } = Astro.props;
+const { media, periodos, habilidades, allHabilidades, param, allRecurses, grados } = Astro.props;
+const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
+
+const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
+
+console.log(pruebagr)
 
 ---
 
@@ -13,17 +18,25 @@ const { media, periodos, habilidades, allMedia, param } = Astro.props;
     <div class="container__grupo">
          <aside>
             <TusClasesNav />
+            
          </aside>
          <main class="contenido">
 
-            <details role="main"  class="detaills__container --grados">
-                <summary class="sumary">{`Grado ${param}`}
-                </summary>
-                <TusClasesGrados media={media} periodos={periodos}/>
-            </details>
+            {
+                ordenGrados.map(({name, id}) =>(
+                   <details role="main"  class="detaills__container --grados">
+                        <summary class="sumary --map">{`Grado ${name}`}
+                        </summary>
+                        
+                    {
+                    ( <TusClasesGrados media={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)
+                    }
+                    </details>
+                )) 
+            } 
             <details role="main"  class="detaills__container Habilidades">
                 <summary class="sumary">Habilidades</summary>
-                <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allMedia={allMedia}/>
+                <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
             </details>
         
          </main>
@@ -109,6 +122,10 @@ const { media, periodos, habilidades, allMedia, param } = Astro.props;
 
     h3{
         margin-left: 10px;
+    }
+
+    .--map{
+        background-color: rgb(20, 104, 160);
     }
 
 </style>

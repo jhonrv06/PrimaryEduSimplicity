@@ -33,11 +33,12 @@ export async function getRecurses(data: string) {
         )
         
         const getValueGrados = response[indice].map( grado =>{
-            const  {name, id, slug} = grado;
 
-            return {name, id, slug}
+            const  {name, id, slug, orden} = grado;
+
+            return {name, id, slug, orden}
         })
-        
+     
         return getValueGrados;
 
     }catch(error){
@@ -89,14 +90,15 @@ export async function  getAllMedia() {
         const response1 = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&page=${pagesTotal}`);
         const dataMedia1 = await response1.json();
         
-        
         totalData = [...dataMedia1, ...dataMedia]
-        
        }
-    
-        console.log(totalData.length)
-    
-        return pagesTotal
+       
+       const filterMedia = totalData.map(({title, link, periodo, grado}) => {
+
+        return {title, link, periodo, grado };
+       })
+       
+        return filterMedia
 
     }catch(error){
         console.log(`Error al obtener los datos ${error}`)
