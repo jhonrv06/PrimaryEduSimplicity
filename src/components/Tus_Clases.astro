@@ -4,6 +4,7 @@ import ImagenVision from '../assets/sobre_nosotros/imagenVision.svg'
 import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
+import ImagenButton1 from '../assets/Imagenbutton1.svg'
 
 const { media, periodos, habilidades, allHabilidades, param, allRecurses, grados } = Astro.props;
 const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
@@ -18,19 +19,19 @@ console.log(pruebagr)
     <div class="container__grupo">
          <aside>
             <TusClasesNav />
-            
          </aside>
          <main class="contenido">
 
             {
                 ordenGrados.map(({name, id}) =>(
                    <details role="main"  class="detaills__container --grados">
-                        <summary class="sumary --map">{`Grado ${name}`}
+                     
+                        <summary id={name}  class="sumary --map">
+                            <h4 class="titleGrades"> {`Grado ${name}`}</h4>
+                           
                         </summary>
                         
-                    {
-                    ( <TusClasesGrados media={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)
-                    }
+                    {( <TusClasesGrados media={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)}
                     </details>
                 )) 
             } 
@@ -46,33 +47,47 @@ console.log(pruebagr)
 <style>
 
     .detaills__container {
-        margin-bottom: 5px;
+        
         margin-left: 50px;
+        
     }
 
+    .titleGrades{
+       
+    }
+    
     .sumary{
         list-style: none;
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 10px;
         align-items: center;
         height: 100px;
         background-color: #F15151;
         color: rgb(255, 255, 255);
         font-weight: 700;
-        box-shadow: 0 0 5px #0202024d;
+        /*box-shadow: 0 0 5px #0202024d;*/
         transition: 1s ;
-        padding-left: 10px;
+        padding-left: 10px; 
         border-radius: 5px;
+        cursor: pointer;
+        /*box-shadow: 0 0 10px #0202026e;*/
+        border: 1px solid rgb(255, 255, 255);
     }
 
     .sumary::after{
         content: '';
-        height: 30px;
-        width: 30px;
-        background: url('/icons/chevron-down.svg') no-repeat ;
+        height: 35px;
+        width: 35px;
+        background: url('/icons/circle-chevron-down.svg') no-repeat ;
         background-size: cover;
         margin-left: .75em;
         transition: 0.2s;
+        /*background-color: rgb(255, 255, 255);*/
+        border-radius: 50%;
     }
+
 
     .detaills__container::details-content{
         opacity: 0;
@@ -83,6 +98,7 @@ console.log(pruebagr)
 
     .detaills__container[open]::details-content {
         opacity: 1;
+       
     }
 
     .detaills__container[open] .sumary{
@@ -125,7 +141,7 @@ console.log(pruebagr)
     }
 
     .--map{
-        background-color: rgb(20, 104, 160);
+        
     }
 
 </style>
