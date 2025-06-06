@@ -13,17 +13,21 @@ const habilidad = habilidades;
     habilidad.map(({name, id}) => (
 
         <section class="section__periodos">
-            <h3>{name}</h3>
+            <details class="details-content --habilidades">
+                <summary class="summary-content --habiliades"> 
+                    <h3>{name}</h3>
+                </summary>
+            
                 {
                  allguias.filter(({habilidad}) => habilidad.includes(id))
                     .map(({title, link}) =>(
                     <section class="content__data">
-                        <p>{title.rendered}</p>
-                        <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
-                    </section>
-                        
-            ))
+                            <p>{title.rendered}</p>
+                            <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
+                    </section>  
+                    ))
                 }
+            </details>
         </section>
          
     ))

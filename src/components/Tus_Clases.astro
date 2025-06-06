@@ -21,8 +21,9 @@ console.log(pruebagr)
             <TusClasesNav />
          </aside>
          <main class="contenido">
-
+           
             {
+               
                 ordenGrados.map(({name, id}) =>(
                    <details role="main"  class="detaills__container --grados">
                      
@@ -36,7 +37,7 @@ console.log(pruebagr)
                 )) 
             } 
             <details role="main"  class="detaills__container Habilidades">
-                <summary class="sumary">Habilidades</summary>
+                <summary class="sumary --habilidades">Habilidades</summary>
                 <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
             </details>
         
@@ -65,15 +66,21 @@ console.log(pruebagr)
         align-items: center;
         height: 100px;
         background-color: #F15151;
+        /*border: 1px solid #F15151;*/
         color: rgb(255, 255, 255);
         font-weight: 700;
         /*box-shadow: 0 0 5px #0202024d;*/
         transition: 1s ;
         padding-left: 10px; 
-        border-radius: 5px;
+        border-radius: 10px;
         cursor: pointer;
+        margin-bottom: 5px;
         /*box-shadow: 0 0 10px #0202026e;*/
-        border: 1px solid rgb(255, 255, 255);
+        /*border: 1px solid rgb(255, 255, 255);*/
+    }
+
+    .sumary:hover{
+        background-color: #c03f3f;
     }
 
     .sumary::after{
@@ -103,10 +110,18 @@ console.log(pruebagr)
 
     .detaills__container[open] .sumary{
         height: 50px;
+        border: 1px solid #F15151;
+        background-color: rgba(240, 248, 255, 0);
+        color: #F15151;
+        /*background-color: #c03f3f;*/
     }
 
     .detaills__container[open] .sumary::after{
         transform: rotate(180deg)
+    }
+
+    .--habilidades{
+        background-color: #1e5785;
     }
 
     .contenido{
