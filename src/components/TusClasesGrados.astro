@@ -15,10 +15,6 @@ import Guias from './tscomponet/GuiasPdf';
                 <summary class="summary-content">
                      <h4 class="titlle">{name}</h4>
                 </summary>
-           
-            <h3>{name}</h3>
-             
-
                 {
                  guias.filter(({periodo}) => periodo[0] === id)
                     .map(({title, link}) =>(
