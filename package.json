@@ -14,6 +14,7 @@
     "@supabase/supabase-js": "^2.49.4",
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.7.5",
+    "pdfjs-dist": "^5.3.31",
     "preact": "^10.26.5"
   },
   "devDependencies": {
