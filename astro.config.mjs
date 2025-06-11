@@ -12,5 +12,13 @@ export default defineConfig({
     },
     }),
     integrations: [preact()],
+    vite: {
+    resolve: {
+      alias: {
+        react: 'preact/compat',
+        'react-dom': 'preact/compat',
+      },
+    },
+  },
 });
 
