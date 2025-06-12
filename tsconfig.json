@@ -3,7 +3,7 @@
   "include": [
     "src",
     "svg.d.ts",
-    ".astro/types.d.ts",
+    ".astro/types.d.ts", "script/generarImagenes.ts",
   ],
   "exclude": [
     "dist"
