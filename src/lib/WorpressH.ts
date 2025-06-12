@@ -93,11 +93,13 @@ export async function  getAllMedia() {
         totalData = [...dataMedia1, ...dataMedia]
        }
        
-       const filterMedia = totalData.map(({title, link, periodo, grado}) => {
-
+       const filterMedia = totalData.map(({title, guid, periodo, grado}) => {
+        const link = guid.rendered;
+        
         return {title, link, periodo, grado };
        })
        
+       console.log(filterMedia)
         return filterMedia
 
     }catch(error){
