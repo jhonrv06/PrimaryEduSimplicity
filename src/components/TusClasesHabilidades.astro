@@ -4,8 +4,8 @@ import  './styles/TusClasesStyles.css';
 const { allHabilidades, habilidades } = Astro.props;
 const allguias = allHabilidades;
 const habilidad = habilidades;
-
-//console.log(allguias)
+import GuiasImg from './tscomponet/GuiasImg';
+console.log(habilidad)
 
 ---
 
@@ -19,10 +19,14 @@ const habilidad = habilidades;
                 </summary>
             
                 {
+                    (1>2) ? console.log("ok"):
+
                  allguias.filter(({habilidad}) => habilidad.includes(id))
-                    .map(({title, link}) =>(
+                    .map(({titleModific, link}) =>(
                     <section class="content__data">
-                            <p>{title.rendered}</p>
+
+                            <GuiasImg  urlPdf={titleModific} client:load/>
+                            <p>{titleModific}</p>
                             <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
                     </section>  
                     ))

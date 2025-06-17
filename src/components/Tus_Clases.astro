@@ -29,13 +29,13 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                      
                         <summary id={name}  class="sumary --map">
                             <h4 class="titleGrades"> {`Grado ${name}`}</h4>
-                           
                         </summary>
                         
                     {( <TusClasesGrados media={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)}
                     </details>
                 )) 
             } 
+            
             <details role="main"  class="detaills__container Habilidades">
                 <summary class="sumary --habilidades">Habilidades</summary>
                 <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>

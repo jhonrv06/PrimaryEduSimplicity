@@ -8,29 +8,8 @@ const WP = process.env.WP_BASE_URL;
 const routeApi: string = "/wp-json/wp/v2/";
 
 async function getAllMedia(pagesTotal: number) {
-    try{/*
-        let dataTotal = [];
-        const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100`);
-        const pagesTotal = response.headers.get('X-WP-TotalPages');
-        const data = await response.json();
-
-        dataTotal = [...data];
-        
-        for(let i = 0; i < pagesTotal; i++){
-
-            dataTotal.map( ({title, guid}) =>{
-                const titleR = title.rendered;
-                const pdfUrl = guid.rendered;
-                console.log("iniciando descarga " + i)
-            descargarPdf(pdfUrl, titleR );
-        })
-
-            const response1 = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&page=${pagesTotal}`);
-            const data2 = await response1.json();
-
-            dataTotal = [...data2];
-        }*/
-
+    try{
+    
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&page=${pagesTotal}`);
         const data = await response.json();
 
@@ -68,27 +47,19 @@ async function descargarPdf(url:string, title: string) {
     fs.writeFileSync(localPdfPath, buffer);
     console.log("✅ PDF descargado y guardado localmente.");
 
-    ConvertirPDF(localPdfPath, title)
+    ConvertirPDF(localPdfPath, name)
     return
     
 }
 
-await getAllMedia(1);
+await getAllMedia(2);
 
 async function ConvertirPDF(routePDF: string, namePdf: string) {
 
     try {
-         
-        /*
-        const psfprueba = [ {title: "archivo1", url: 'https://primaryedusimplicity.com/wp-content/uploads/2025/05/INTRODUCING-MYSELF.pdf' },
-                            {title: "archivo2", url: 'https://primaryedusimplicity.com/wp-content/uploads/2025/05/DOMESTIC-ANIMALS.pdf' }
-         ]*/
-            
-               
                 const outputDir = './public/thumbnails';
                 fs.mkdirSync(outputDir, { recursive: true });
 
-                
                 const convert = fromPath(routePDF, {
                 density: 150,
                 saveFilename: namePdf,

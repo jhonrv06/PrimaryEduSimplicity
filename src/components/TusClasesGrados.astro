@@ -6,6 +6,7 @@ const ordenPeriodos = [...periodos].sort((a,b) => a.slug-b.slug );
 import  './styles/TusClasesStyles.css';
 import Guias from './tscomponet/GuiasPdf';
 import GuiasImg from './tscomponet/GuiasImg';
+
 ---
 
 {   
@@ -18,12 +19,12 @@ import GuiasImg from './tscomponet/GuiasImg';
                 </summary>
                 {
                  guias.filter(({periodo}) => periodo[0] === id)
-                    .map(({title, link}) =>(
+                    .map(({titleModific, link}) =>(
                            
                         <article class="content__data">
-                            <GuiasImg  urlPdf={title.rendered} client:load/>
+                            <GuiasImg  urlPdf={titleModific} client:load/>
                             
-                            <p>{title.rendered}</p>
+                            <p>{titleModific}</p>
                            <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
                            
                         </article>       

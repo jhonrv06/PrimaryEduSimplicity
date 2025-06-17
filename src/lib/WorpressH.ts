@@ -69,7 +69,15 @@ export async function getHabilitis(idHabilidades: string) {
     try{
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&habilidad=${idHabilidades}`);
         const dataMedia = await response.json();
-        return dataMedia
+
+        const habillities = dataMedia.map(({title, link, habilidad}) =>{
+            const titleModific = title.rendered.replace("#"," ");
+          
+            return {titleModific, link, habilidad}
+        }
+
+        )
+        return habillities
 
     }catch(error){
         console.log(`Error al obtener los datos ${error}`)
@@ -95,8 +103,10 @@ export async function  getAllMedia() {
        
        const filterMedia = totalData.map(({title, guid, periodo, grado}) => {
         const link = guid.rendered;
+        //Es necesario quitar el signo # para poder obtener los nombres de las imágenes
+        const titleModific = title.rendered.replace("#"," ");
         
-        return {title, link, periodo, grado };
+        return {titleModific, link, periodo, grado};
        })
        
      
