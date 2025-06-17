@@ -99,7 +99,7 @@ export async function  getAllMedia() {
         return {title, link, periodo, grado };
        })
        
-       console.log(filterMedia)
+     
         return filterMedia
 
     }catch(error){
