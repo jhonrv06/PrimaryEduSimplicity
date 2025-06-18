@@ -22,11 +22,12 @@ export default  function contentNav (){
                 <button className="Habilidades">Habilidades</button>
                 <nav class="habilidades_list" >
                     <ul>
-                        <li>Listening</li>
-                        <li>Reading</li>
-                        <li>Speaking</li>
-                        <li>Vocabulary</li>
-                        <li>Writing</li>
+                        <li><a href="#Listening">Listening</a></li>
+                        <li><a href="#Reading">Reading</a></li>
+                        <li><a href="#Speaking">Speaking</a></li>
+                        <li><a href="#Vocabulary">Vocabulary</a></li>
+                        <li><a href="#Writing">Writing</a></li>
+                        <li><a href="#Quiz Time">Quiz Time</a></li>
                     </ul>
                 </nav>
             </section>

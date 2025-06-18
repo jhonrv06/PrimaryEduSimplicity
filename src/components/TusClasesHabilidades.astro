@@ -5,8 +5,6 @@ const { allHabilidades, habilidades } = Astro.props;
 const allguias = allHabilidades;
 const habilidad = habilidades;
 import GuiasImg from './tscomponet/GuiasImg';
-console.log(habilidad)
-
 ---
 
 {   
@@ -17,7 +15,7 @@ console.log(habilidad)
                 <summary class="summary-content --habiliades"> 
                     <h3>{name}</h3>
                 </summary>
-            
+                <div class="container__elements">
                 {
                     (1>2) ? console.log("ok"):
 
@@ -31,6 +29,7 @@ console.log(habilidad)
                     </section>  
                     ))
                 }
+                </div>
             </details>
         </section>
          

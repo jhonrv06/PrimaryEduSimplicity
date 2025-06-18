@@ -1,0 +1,10 @@
+.contenImg{
+    box-shadow: 0 0 10px #0202024d;
+    border-radius: 5px;
+}
+
+.contenImg:hover{
+    box-shadow: 0 0 10px #0202026e;
+    transition: 0.5s;
+    scale: 2;
+}

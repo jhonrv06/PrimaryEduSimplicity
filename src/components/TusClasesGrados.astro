@@ -17,19 +17,24 @@ import GuiasImg from './tscomponet/GuiasImg';
                 <summary class="summary-content">
                      <h4 class="titlle">{name}</h4>
                 </summary>
+                <div class="container__elements">
                 {
                  guias.filter(({periodo}) => periodo[0] === id)
                     .map(({titleModific, link}) =>(
-                           
-                        <article class="content__data">
-                            <GuiasImg  urlPdf={titleModific} client:load/>
+                        
+                            <article class="content__data">
+                                <GuiasImg  urlPdf={titleModific} client:load/>
+                                
+                                <p>{titleModific}</p>
+                                <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
                             
-                            <p>{titleModific}</p>
-                           <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
-                           
-                        </article>       
-                    ))
+                            </article>  
+
+                        
+                                 
+                    ))       
                 }
+                </div>
             </details>
         </section>
          
