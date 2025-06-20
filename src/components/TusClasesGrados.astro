@@ -23,11 +23,10 @@ import GuiasImg from './tscomponet/GuiasImg';
                     .map(({titleModific, link}) =>(
                         
                             <article class="content__data">
-                                <GuiasImg  urlPdf={titleModific} client:load/>
+                                <GuiasImg  urlPdf={titleModific} linkPdf={link} client:load/>
                                 
-                                <p>{titleModific}</p>
-                                <a href={link} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
-                            
+                                <p class="text__targets"> <span class="textSpan">Titulo: </span> {titleModific}</p>
+                                <a href={`/api/descargarPdf?url=${link}`} download={link}><button class="button__descarga">Descargar</button></a>
                             </article>  
 
                         
