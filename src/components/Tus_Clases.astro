@@ -11,9 +11,10 @@ const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
 
 const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 
-
-
 ---
+<section class="container__Guia_pdf">
+
+</section>
 
 <div class="container">
     <div class="container__grupo">
@@ -22,8 +23,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
          </aside>
          <main class="contenido">
            
-            {
-               
+            {   
                 ordenGrados.map(({name, id}) =>(
                    <details role="main"  class="detaills__container --grados">
                      
@@ -45,6 +45,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
         
          </main>
     </div>
+    <script src="/scripts/tusClases.js" defer></script>
 </div>
 
 <style>
