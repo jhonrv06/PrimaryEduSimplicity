@@ -5,6 +5,7 @@ import TusClasesGrados from './TusClasesGrados.astro'
 import TusClasesHabilidades from './TusClasesHabilidades.astro'
 import TusClasesNav from './tscomponet/tusClasesNav'
 import ImagenButton1 from '../assets/Imagenbutton1.svg'
+import  './styles/TusClasesStyles.css';
 
 const { media, periodos, habilidades, allHabilidades, param, allRecurses, grados } = Astro.props;
 const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
@@ -12,9 +13,7 @@ const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
 const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 
 ---
-<section class="container__Guia_pdf">
 
-</section>
 
 <div class="container">
     <div class="container__grupo">

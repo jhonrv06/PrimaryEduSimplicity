@@ -10,9 +10,8 @@ type Props = {
 export  default  function GuiasImg( { urlPdf, linkPdf }: Props){
 
   const urlPdfRender = `/thumbnails/${urlPdf}.png`
-
      return(
         <>
-            <a href={linkPdf} target={"_blank"} ><img className={"contenImg"} src={urlPdfRender} width={"200px"} height={"auto"}  alt=""/></a>
+           <img className={"contenImg"} src={urlPdfRender} width={"200px"} height={"auto"}  alt="" data-info={urlPdf}/>
         </>
 )}

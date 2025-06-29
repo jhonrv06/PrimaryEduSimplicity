@@ -1,40 +1,51 @@
 import { useEffect, useState, useRef} from  'preact/hooks'
 //import * as pdfjsLib from 'pdfjs-dist';
-
+import  './styles/img.css';
 import { getDocument, GlobalWorkerOptions  } from "pdfjs-dist/legacy/build/pdf.mjs";
 
-
-
-const urlPdf = 'https://primaryedusimplicity.com/wp-content/uploads/2025/05/MONTHS-OF-THE-YEAR.pdf';
 
 export  default  function Guias(){
     const [urlPdfiamgen, seturlPdfiamgen] = useState();
 
+    const imgInfo = document.querySelectorAll('.contenImg');
+
+    imgInfo.forEach(element => {
+        
+        element.addEventListener("click", (e) => {
+            const target = e.currentTarget;
+            const dataInfo = target.dataset.info;
+
+            seturlPdfiamgen(dataInfo);
+            console.log(dataInfo)
+        });
+    })
+   
+    const urlPdf = `/guiasPdf/${urlPdfiamgen}.pdf`;
+        
     const canva = useRef<HTMLCanvasElement>(null);
-    
+    console.log(urlPdf)
     console.log("componente funcionando")
    
     useEffect(() =>{
         async function renderPdf() {
+        console.log(urlPdf)
         GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-
+            
         try{
+            
             const loadingTask =  getDocument(urlPdf);
             const pdf = await loadingTask.promise;
             const page = await pdf.getPage(1);
-            const viewport = page.getViewport({ scale: 0.2 });
+            const viewport = page.getViewport({ scale: 1 });
             const canvasCurrent = canva.current;
 
             if (!canvasCurrent) return;
             const contex = canvasCurrent?.getContext('2d');
             canvasCurrent.height = viewport.height;
             canvasCurrent.width = viewport.width;
-
+            
             await page.render({ canvasContext: contex!, viewport }).promise;
-          
-            const dataUrl = canvasCurrent.toDataURL('img/png'); // base64 string
-            console.log(dataUrl);
-            seturlPdfiamgen(dataUrl);
+            
             return
 
         }catch(error){
@@ -45,12 +56,12 @@ export  default  function Guias(){
      renderPdf()
     
         //console.log(canvasCurrent);
-    },[])
+    },[urlPdfiamgen])
 
      return(
-        <>
-            <canvas  ref={canva} style={{ display: 'none' }}/>
-            <img src={urlPdfiamgen} width={"100px"} height={"100px"}  alt="" />
-
+        <> 
+            <section className={'container__Guia_pdf container__Guia_pdf_visible  '} >
+                <canvas  ref={canva} style={{ width: '500px', height: 'auto', border: '1px solid' }}/>
+            </section>
         </>
 )}

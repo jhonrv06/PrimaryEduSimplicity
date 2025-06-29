@@ -6,6 +6,7 @@ import  './layout.css';
 import MenuResponsive from '../components/MenuResponsive.astro';
 import menu2 from '../assets/LayoutImag/menu-2.svg';
 import Analytics from '@vercel/analytics/astro'
+import Guias from '../components/tscomponet/GuiasPdf';
 ---
 
 <!doctype html>
@@ -24,6 +25,7 @@ import Analytics from '@vercel/analytics/astro'
 		
 	</head>
 	<body>
+		
 		<header class="header__container">
 			<label class="button_menu" for="chek__item" role="button">
 				<img src={menu2.src} alt="menu">
@@ -59,6 +61,9 @@ import Analytics from '@vercel/analytics/astro'
 			</div>
 			<p>© 2025 PrimariEduSimplicity| All Rights Reserved</p>
 		</footer>
-		<Analytics/>
+		<Analytics/>	
+	
+			<Guias client:load client:only/>
+		
 	</body>
 </html>

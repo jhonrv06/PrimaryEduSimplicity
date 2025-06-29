@@ -1,11 +1,29 @@
 .contenImg{
     box-shadow: 0 0 10px #0202024d;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-/*
+
 .contenImg:hover{
     box-shadow: 0 0 10px #0202026e;
     transition: 0.5s;
-    scale: 2;
-}*/
+    scale: 1.05;
+}
+.container__Guia_pdf{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+	z-index: 4;
+}
+
+
+.container__Guia_pdf_visible{
+    background-color: rgba(77, 168, 247, 0.281);
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+	z-index: 4;
+}

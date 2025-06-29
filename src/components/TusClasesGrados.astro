@@ -4,7 +4,7 @@ const { media, periodos } = Astro.props;
 const guias = media;
 const ordenPeriodos = [...periodos].sort((a,b) => a.slug-b.slug );
 import  './styles/TusClasesStyles.css';
-import Guias from './tscomponet/GuiasPdf';
+
 import GuiasImg from './tscomponet/GuiasImg';
 
 ---
@@ -28,10 +28,7 @@ import GuiasImg from './tscomponet/GuiasImg';
                                 <p class="text__targets"> <span class="textSpan">Titulo: </span> {titleModific}</p>
                                 <a href={link} download={link} target="_blank" ><button class="button__descarga">Abrir PDF</button></a>
                                
-                            </article>  
-
-                        
-                                 
+                            </article>            
                     ))       
                 }
                 </div>

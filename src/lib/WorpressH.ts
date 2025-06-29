@@ -1,5 +1,3 @@
-import type { NumericLiteral } from "typescript";
-
 const WP = import.meta.env.WP_BASE_URL;
 const routeApi: string = "/wp-json/wp/v2/";
 
@@ -38,7 +36,7 @@ export async function getRecurses(data: string) {
 
             return {name, id, slug, orden}
         })
-     
+        console.log("Datos Obtenidos 1 recurses")
         return getValueGrados;
 
     }catch(error){
@@ -55,7 +53,7 @@ export async function getMedia(dataG: string) {
 
             return {title, link, periodo}
         })
-
+        console.log("Datos Obtenidos 2 getMedia")
         return filtermedia
 
     }catch(error){
@@ -67,6 +65,7 @@ export async function getMedia(dataG: string) {
 
 export async function getHabilitis(idHabilidades: string) {
     try{
+        console.log("Iniciando obtención de los recursos habilidades")
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100&habilidad=${idHabilidades}`);
         const dataMedia = await response.json();
 
@@ -77,6 +76,7 @@ export async function getHabilitis(idHabilidades: string) {
         }
 
         )
+        console.log("Datos Obtenidos 3 getHabilities")
         return habillities
 
     }catch(error){
@@ -87,6 +87,7 @@ export async function getHabilitis(idHabilidades: string) {
 export async function  getAllMedia() {
  
       try{
+        console.log("Iniciando obtención de los recursos")
         let totalData = [];
 
         const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&per_page=100`);
@@ -109,7 +110,7 @@ export async function  getAllMedia() {
         return {titleModific, link, periodo, grado};
        })
        
-     
+        console.log("Datos Obtenidos 4 Allmedia")
         return filterMedia
 
     }catch(error){
