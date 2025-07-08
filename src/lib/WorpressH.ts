@@ -1,3 +1,6 @@
+import { number } from "astro:schema";
+import { console } from "inspector";
+
 const WP = import.meta.env.WP_BASE_URL;
 const routeApi: string = "/wp-json/wp/v2/";
 
@@ -36,9 +39,9 @@ export async function getRecurses(data: string) {
 
             return {name, id, slug, orden}
         })
-        console.log("Datos Obtenidos 1 recurses")
+        console.log("Habilidades, grados y periodos obtenidos exitosamente")
         return getValueGrados;
-
+        
     }catch(error){
         console.log(`Error al obtener los datos ${error}`)
     }
@@ -85,7 +88,7 @@ export async function getHabilitis(idHabilidades: string) {
 }
 
 export async function  getAllMedia() {
- 
+    
       try{
         console.log("Iniciando obtención de los recursos")
         let totalData = [];
@@ -103,14 +106,27 @@ export async function  getAllMedia() {
        }
        
        const filterMedia = totalData.map(({title, guid, periodo, grado}) => {
+        let order = [];
         const link = guid.rendered;
         //Es necesario quitar el signo # para poder obtener los nombres de las imágenes
         const titleModific = title.rendered.replace("#"," ");
-        
-        return {titleModific, link, periodo, grado};
+
+        for (const letter of titleModific) {
+            
+            
+            if(!isNaN(letter) && letter !== " "){
+                order.push(letter)
+            }
+           
+        }
+        const orderCommas = order.join().replaceAll(",","");
+        const orderToNumber = Number(orderCommas);
+
+        return {titleModific, link, periodo, grado, orderToNumber };
        })
        
-        console.log("Datos Obtenidos 4 Allmedia")
+        console.log(filterMedia)
+        console.log("Recursos obtenidos exitosamente")
         return filterMedia
 
     }catch(error){

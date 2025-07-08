@@ -1,14 +1,16 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
 const { media, periodos } = Astro.props;
-const guias = media;
-const ordenPeriodos = [...periodos].sort((a,b) => a.slug-b.slug );
+
+const guias = [...media].sort((a,b)=> a.orderToNumber - b.orderToNumber );
+
+const ordenPeriodos = [...periodos].sort((a,b) => a.slug - b.slug );
+
 import  './styles/TusClasesStyles.css';
 
 import GuiasImg from './tscomponet/GuiasImg';
 
 ---
-
 {   
     ordenPeriodos.map(({name, id}) => (
    
@@ -26,7 +28,7 @@ import GuiasImg from './tscomponet/GuiasImg';
                                 <GuiasImg  urlPdf={titleModific} linkPdf={link} client:load/>
                                 
                                 <p class="text__targets"> <span class="textSpan">Titulo: </span> {titleModific}</p>
-                                <a href={link} download={link} target="_blank" ><button class="button__descarga">Abrir PDF</button></a>
+                                <a href={`/guiasPdf/${titleModific}.pdf`} download={titleModific} target="_blank" ><button class="button__descarga">Descargar PDF</button></a>
                                
                             </article>            
                     ))       

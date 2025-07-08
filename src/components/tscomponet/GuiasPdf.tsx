@@ -6,6 +6,7 @@ import { getDocument, GlobalWorkerOptions  } from "pdfjs-dist/legacy/build/pdf.m
 
 export  default  function Guias(){
     const [urlPdfiamgen, seturlPdfiamgen] = useState();
+    const [containerVisible, setcontainerVisible] = useState("");
 
     const imgInfo = document.querySelectorAll('.contenImg');
 
@@ -16,6 +17,7 @@ export  default  function Guias(){
             const dataInfo = target.dataset.info;
 
             seturlPdfiamgen(dataInfo);
+            setcontainerVisible("container__Guia_pdf_visible");
             console.log(dataInfo)
         });
     })
@@ -36,7 +38,7 @@ export  default  function Guias(){
             const loadingTask =  getDocument(urlPdf);
             const pdf = await loadingTask.promise;
             const page = await pdf.getPage(1);
-            const viewport = page.getViewport({ scale: 1 });
+            const viewport = page.getViewport({ scale: 1.5 });
             const canvasCurrent = canva.current;
 
             if (!canvasCurrent) return;
@@ -60,8 +62,10 @@ export  default  function Guias(){
 
      return(
         <> 
-            <section className={'container__Guia_pdf container__Guia_pdf_visible  '} >
-                <canvas  ref={canva} style={{ width: '500px', height: 'auto', border: '1px solid' }}/>
+            <section className={`container__Guia_pdf ${containerVisible}`} >
+                <div class={'container__canvas'}>
+                    <canvas class={'canvas__render'}  ref={canva} />
+                </div>
             </section>
         </>
 )}
