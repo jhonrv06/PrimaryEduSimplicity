@@ -2,6 +2,7 @@ import { useEffect, useState, useRef} from  'preact/hooks'
 //import * as pdfjsLib from 'pdfjs-dist';
 import  './styles/img.css';
 import { getDocument, GlobalWorkerOptions  } from "pdfjs-dist/legacy/build/pdf.mjs";
+import closeImg from '../../assets/square-x-red.svg';
 
 
 export  default  function Guias(){
@@ -21,6 +22,10 @@ export  default  function Guias(){
             console.log(dataInfo)
         });
     })
+
+    function close (){
+        setcontainerVisible("");;
+    }
    
     const urlPdf = `/guiasPdf/${urlPdfiamgen}.pdf`;
         
@@ -63,9 +68,14 @@ export  default  function Guias(){
      return(
         <> 
             <section className={`container__Guia_pdf ${containerVisible}`} >
+                
                 <div class={'container__canvas'}>
+                   <button onClick={close} class={'button__canvas'}>
+                        <img class={'icon__close'} src={closeImg.src} alt="" /> 
+                   </button>
                     <canvas class={'canvas__render'}  ref={canva} />
                 </div>
+                
             </section>
         </>
 )}
