@@ -1,5 +1,4 @@
 ---
-import { string } from 'astro:schema';
 import Tus_Clases from '../../components/Tus_Clases.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import {getMedia, getRecurses, getHabilitis, getAllMedia} from '../../lib/WorpressH';
@@ -8,7 +7,7 @@ const param = Astro.params.name;
 
 
 const allRecurses = await getAllMedia();
-
+console.log(allRecurses)
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
 	return grados.map( ({name}) => ({ params: {name}}) )

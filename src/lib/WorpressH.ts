@@ -1,10 +1,11 @@
-import { number } from "astro:schema";
 import { console } from "inspector";
 
 const WP = import.meta.env.WP_BASE_URL;
 const routeApi: string = "/wp-json/wp/v2/";
-
+console.log("ejecutando feth")
 export async function getCurses(data: string){
+
+    console.log("Obteniendo datos")
     try{
         const response = await fetch(`${WP}${routeApi}${data}`);
         const dataCourses = await response.json();
