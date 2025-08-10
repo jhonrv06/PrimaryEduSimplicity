@@ -8,7 +8,7 @@
     padding: 30px;
     border-radius: 10px;
     border: 1px solid rgb(192, 192, 192);
-    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    
     
 }
 .container__elements{
@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     padding: 0px 10px 0px 10px;
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
 .content__data:hover{
@@ -94,4 +95,19 @@
 .button__descarga:hover{
     box-shadow: 0 0 10px #0202026e;
     transition: 0.5s;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+ .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }

@@ -7,7 +7,7 @@ const param = Astro.params.name;
 
 
 const allRecurses = await getAllMedia();
-console.log(allRecurses)
+
 export async function getStaticPaths(){
 	const grados = await getRecurses("grado");
 	return grados.map( ({name}) => ({ params: {name}}) )
