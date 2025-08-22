@@ -48,25 +48,6 @@ export async function getRecurses(data: string) {
     }
 }
 
-export async function getMedia(dataG: string) {
-    try{
-        const response = await fetch(`${WP}${routeApi}media?mime_type=application/pdf&grado=${dataG}&per_page=100`);
-        const dataMedia = await response.json();
-
-        const filtermedia = dataMedia.map( ({title, link, periodo}) => {
-
-            return {title, link, periodo}
-        })
-        console.log("Datos Obtenidos 2 getMedia")
-        return filtermedia
-
-    }catch(error){
-        console.log(`Error al obtener los datos ${error}`)
-    }
-}
-
-
-
 export async function getHabilitis(idHabilidades: string) {
     try{
         console.log("Iniciando obtención de los recursos habilidades")

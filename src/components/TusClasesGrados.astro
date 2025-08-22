@@ -1,9 +1,8 @@
 ---
 import ImagenMision from '../assets/sobre_nosotros/imagenMision.svg'
-const { media, periodos } = Astro.props;
+const { allRecurses, periodos } = Astro.props;
 
-const guias = [...media].sort((a,b)=> a.orderToNumber - b.orderToNumber );
-
+const guias = [...allRecurses].sort((a,b)=> a.orderToNumber - b.orderToNumber );
 const ordenPeriodos = [...periodos].sort((a,b) => a.slug - b.slug );
 
 import  './styles/TusClasesStyles.css';

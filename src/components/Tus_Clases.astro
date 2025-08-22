@@ -12,38 +12,35 @@ const ordenGrados = [...grados].sort((a,b)=> a.orden - b.orden);
 
 const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 
+
 ---
 
 
 <div class="container">
            <nav class="headerMenu__nav">
                 <ul>
-                    <li>Guias</li>
-                    <li>Habilidades</li>
+                    <li id="guias" class="buttton --guiasMenu" >Guias</li>
+                    <li id="Habilidades" class="buttton --habilidadesMenu">Habilidades</li>
                 </ul>
            </nav>
          <main class="contenido">
-           
-            {   
-                ordenGrados.map(({name, id}) =>(
-                   <details role="main"  class="detaills__container --grados">
-                     
-                        <summary id={name}  class="sumary --map">
-                            <h3 class="titleGrades"> {`Grado ${name}`}</h3>
-                        </summary>
+           <section class="guias">
+                {   
+                    ordenGrados.map(({name, id}) =>(
+                    <details role="main"  class="detaills__container --grados">
                         
-                    {( <TusClasesGrados media={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)}
-                    </details>
-                )) 
-            } 
-            
-            <details role="main"  class="detaills__container Habilidades">
-                <summary class="sumary --habilidades">
-                    <h3 class="titleHabilidades">Habilidades </h3>
-                </summary>
-                <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
-            </details>
-        
+                            <summary id={name}  class="sumary --map">
+                                <h3 class="titleGrades"> {`Grado ${name}`}</h3>
+                            </summary>
+                            
+                        {( <TusClasesGrados allRecurses={allRecurses.filter(({grado}) => ( grado[0] == id ))} periodos={periodos}/>)}
+                        </details>
+                    )) 
+                }
+           </section>
+            <section class="habilidades">
+                    <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
+            </section> 
          </main>
     
     <script src="/scripts/tusClases.js" defer></script>
@@ -51,10 +48,6 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 
 <style>
 
-    .titleGrades{
-       
-    }
-    
     .sumary{
         list-style: none;
         display: flex;
@@ -124,10 +117,6 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 
     h3{
         margin-left: 10px;
-    }
-
-    .--map{
-        
     }
 
 </style>

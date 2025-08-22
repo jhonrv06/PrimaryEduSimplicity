@@ -142,3 +142,7 @@
     justify-content: center;
 }
 
+/* Inician los estilos para ocultar y mostrar el contenido*/
+.Habilidades{
+    display: visible;
+}
