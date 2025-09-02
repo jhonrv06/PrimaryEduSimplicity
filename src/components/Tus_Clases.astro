@@ -24,7 +24,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                 </ul>
            </nav>
          <main class="contenido">
-           <section class="guias">
+           <section class="guiasConten">
                 {   
                     ordenGrados.map(({name, id}) =>(
                     <details role="main"  class="detaills__container --grados">
@@ -38,7 +38,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                     )) 
                 }
            </section>
-            <section class="habilidades">
+            <section class="habilidadesConten oculto">
                     <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
             </section> 
          </main>
