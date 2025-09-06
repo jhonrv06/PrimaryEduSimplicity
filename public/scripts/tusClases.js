@@ -5,9 +5,17 @@ const Habilidades = document.querySelector(".habilidadesConten");
 const guiesButton = document.querySelectorAll(".buttton");
 
 guiesButton.forEach(element => {
+
     element.addEventListener("click", (e) => {
         const elementValue = e.target;
         const elementId = elementValue.id;
+
+    guiesButton.forEach(elementI =>{
+        elementI.classList.remove("focusContent")
+    })
+        elementValue.classList.add("focusContent")
+        console.log(elementValue.className) 
+        
         
         if(elementId == "Habilidades"){
             Habilidades.classList.remove("oculto")

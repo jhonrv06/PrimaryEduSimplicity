@@ -116,10 +116,11 @@
 
 .headerMenu__nav{
     background-color: #E8E7EC;
+    flex-direction: column;
     width: 100%;
-    height: 300px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .headerMenu__nav ul{
@@ -145,7 +146,17 @@
     cursor: pointer;
 }
 
+.headerMenu__nav li:hover{
+    background-color: #bfbfcc;
+    color: #27272e;
+}
+
 /* Inician los estilos para ocultar y mostrar el contenido*/
+
+.headerMenu__nav .focusContent{
+    background-color: #6a6a74;
+    color: #ffffff;
+}
 
 .visible{
     display: visible;
