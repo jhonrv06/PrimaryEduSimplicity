@@ -24,9 +24,8 @@ import GuiasImg from './tscomponet/GuiasImg';
                     <section class="content__data">
 
                             <GuiasImg  urlPdf={titleModific} client:load/>
-                            <p>{titleModific}</p>
-                            
-                            <a href={`/guiasPdf/${titleModific}.pdf`} download={titleModific} target="_blank"><img src="/icons/download_red.svg" width="25px" height="auto" alt=""></a>
+                            <p class="text__targets"> <span class="textSpan">Titulo: </span> {titleModific}</p>
+                            <a href={`/guiasPdf/${titleModific}.pdf`} download={titleModific} target="_blank"><button class="button__descarga">Descargar PDF</button></a>
                     </section>  
                     ))
                 }

@@ -79,9 +79,9 @@
 
 .button__descarga{
     font-size: clamp(0.9rem, 1vw, 1rem);
-	padding: clamp(0.4rem, 0.4vw, 1rem) clamp(0.4rem, 2vw, 2rem);
+	padding: clamp(0.4rem, 0.9vw, 1rem) clamp(0.4rem, 1.5vw, 2rem);
     cursor: pointer;
-	max-width: 90%;
+	max-width: 100%;
 	min-width: 20px;
 	flex-grow: 1;
 	border: 0;
@@ -121,6 +121,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 10px 0;
 }
 
 .headerMenu__nav ul{
@@ -128,7 +129,7 @@
     list-style: none;   
     display: flex;
     gap: 10px;
-    width: 400px;
+    width: 350px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -139,7 +140,7 @@
     background-color: #d1d2e0;
     color: #27272e;
     font-weight: 800;
-    padding: 20px 0;
+    padding: 15px 0;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -154,7 +155,7 @@
 /* Inician los estilos para ocultar y mostrar el contenido*/
 
 .headerMenu__nav .focusContent{
-    background-color: #6a6a74;
+    background-color: #d43b30;
     color: #ffffff;
 }
 
@@ -210,4 +211,22 @@
         transition: 0.2s;
         /*background-color: rgb(255, 255, 255);*/
         border-radius: 50%;
+    }
+
+    .textDescription {
+        font-size: clamp(1rem, 1vw, 30rem);
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    .imagenDescription{
+        width: 30%;
+        height: auto;
+    }
+
+    .descriptionConten{
+        padding: 60px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }

@@ -19,7 +19,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
 <div class="container">
            <nav class="headerMenu__nav">
                 <ul>
-                    <li id="guias" class="buttton --guiasMenu" >Guias</li>
+                    <li id="guias" class="buttton --guiasMenu focusContent" >Guias</li>
                     <li id="Habilidades" class="buttton --habilidadesMenu">Habilidades</li>
                 </ul>
                 
@@ -27,7 +27,12 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
          <main class="contenido">
             
            <section class="guiasConten">
-                <p>En PrimaryEduSimplicity, nos dedicamos a apoyar a los docentes de primaria proporcionando recursos de inglés de alta calidad, prácticos y creativos. Nuestro objetivo es hacer que el aprendizaje del inglés sea una experiencia divertida, significativa y accesible para todos los estudiantes, impulsando su confianza y amor por el idioma.</p>
+                <div class="descriptionConten">
+                    <p class="textDescription">En esta sesion podras encontrar guias en formato PDF las cuales podras descargar y te ayudaran a preparar tus clases. 
+                    Las distintas guias contienen instrucciones y temas a cordes a cada grado con su respectivo periodo.
+                    </p>
+                    <img class="imagenDescription" src="/timeToLearn.png" alt="">
+                </div>
                 {   
                     ordenGrados.map(({name, id}) =>(
                     <details role="main"  class="detaills__container --grados">
@@ -42,7 +47,8 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                 }
            </section>
             <section class="habilidadesConten oculto">
-                 <p>En PrimaryEduSimplicity, nos dedicamos a apoyar a los docentes de primaria proporcionando recursos de inglés de alta calidad, prácticos y creativos. Nuestro objetivo es hacer que el aprendizaje del inglés sea una experiencia divertida, significativa y accesible para todos los estudiantes, impulsando su confianza y amor por el idioma.</p>
+                 <p class="textDescription">En esta sesion podras encontrar guias en formato PDF las cuales podras descargar y te ayudaran a preparar tus clases. 
+                    Las distintas guias contienen instrucciones y temas a cordes a cada grado con su respectivo periodo.
                     <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
             </section> 
          </main>
