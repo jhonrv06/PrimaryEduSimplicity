@@ -31,7 +31,7 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                     <p class="textDescription">En esta sección encontrarás guías en formato PDF las cuales podrás descargar y te ayudarán a preparar tus clases. 
                         Las distintas guías contienen instrucciones y temas acordes a cada grado con su respectivo periodo.
                     </p>
-                    <img class="imagenDescription" src="/timeToLearn.png" alt="">
+                    <img class="imagenDescription" src="/boyreading.png" alt="">
                 </div>
                 {   
                     ordenGrados.map(({name, id}) =>(
@@ -47,8 +47,12 @@ const pruebagr = allRecurses.filter(({grado}) => ( grado[0] ==  3 ))
                 }
            </section>
             <section class="habilidadesConten oculto">
-                 <p class="textDescription">En esta sesion podras encontrar guias en formato PDF las cuales podras descargar y te ayudaran a preparar tus clases. 
-                    Las distintas guias contienen instrucciones y temas a cordes a cada grado con su respectivo periodo.
+                <div class="descriptionConten">
+                    <p class="textDescription">En esta sección encontrarás habilidades en formato PDF que podrás descargar y utilizar para fortalecer tu aprendizaje. 
+                    Cada documento está diseñado para trabajar de manera práctica y enfocada en distintas competencias, organizadas según el nivel y el periodo correspondiente.
+                    </p>
+                    <img class="imagenDescription" src="/littlegirlreading.png" alt="">
+                </div>
                     <TusClasesHabilidades media={media} periodos={periodos} habilidades={habilidades} allHabilidades={allHabilidades}/>
             </section> 
          </main>

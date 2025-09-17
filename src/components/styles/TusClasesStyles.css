@@ -221,15 +221,17 @@
         font-size: clamp(1rem, 1vw, 30rem);
         line-height: 1.5;
         font-weight: 400;
+        
     }
 
     .imagenDescription{
-        width: 30%;
+        width: 15%;
         height: auto;
     }
 
     .descriptionConten{
-        padding: 60px 0;
+        
+        padding: 40px 20px;
         display: flex;
         justify-content: center;
         align-items: center;
