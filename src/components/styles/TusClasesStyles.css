@@ -1,3 +1,7 @@
+:root{
+    --colorMenuGuias: #d43b30;
+}
+
 .content__data{
     gap: 10px;
     display: flex;
@@ -155,7 +159,7 @@
 /* Inician los estilos para ocultar y mostrar el contenido*/
 
 .headerMenu__nav .focusContent{
-    background-color: #d43b30;
+    background-color: var(--colorMenuGuias);
     color: #ffffff;
 }
 
